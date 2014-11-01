@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="<?php echo base_url()?>js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url()?>js/fancy/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+	<script type="text/javascript" src="<?php echo base_url()?>js/fancy/source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>js/fancy/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+    <script>
+    	$(document).ready(function() 
+		{
+            $('#textSearch').keyup(function(){
+
+				$.post("<?php echo base_url()?>index.php/CustomerCon/showInvoiceResult",
+				{
+					textSearch:$('#textSearch').val()
+				},
+				function(data)
+					{
+						$('.content').html(data);
+					});
+			});
+        });
+    </script>
+ <script>
+  $('.link').fancybox({
+	  			height :	'100%',
+				width :	'100%',
+				autoSize : false,
+				scrolling : 'auto',
+				arrows : false,
+				type				: 'iframe',
+				
+	
+});
+ </script>
+<p style="text-align: center">
+  <label for="textfield"></label>
+  <input type="text" name="textSearch" id="textSearch">
+</p>
+<div class="content">
+</div>
+</body>
+</html>
