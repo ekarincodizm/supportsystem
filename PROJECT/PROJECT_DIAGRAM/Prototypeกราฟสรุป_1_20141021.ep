@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Document xmlns="http://www.evolus.vn/Namespace/Pencil"><Properties/><Pages><Page><Properties><Property name="name">Untitled Page</Property><Property name="id">1414041448373_7981</Property><Property name="width">977</Property><Property name="height">542</Property><Property name="dimBackground"/><Property name="transparentBackground"/><Property name="backgroundColor">#ffffff</Property></Properties><Content><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.GTK.Widgets:Window" id="46f157d8db6247edbaf23a09aecc23f2" transform="matrix(1,0,0,1,264,94)"><p:metadata><p:property name="box"><![CDATA[403,278]]></p:property><p:property name="headerHeight"><![CDATA[0,33.36]]></p:property><p:property name="titleText"><![CDATA[กราฟสรุปการรับซื้อ]]></p:property><p:property name="textColor"><![CDATA[#FFFFFFFF]]></p:property><p:property name="textFont"><![CDATA[Liberation Sans|bold|normal|13px|none]]></p:property><p:property name="textAlign"><![CDATA[1,1]]></p:property><p:property name="headerColor"><![CDATA[#FFFFFFFF]]></p:property><p:property name="withShadow"><![CDATA[true]]></p:property></p:metadata>
+            
+            <defs>
+                <linearGradient x1="0%" y1="0%" x2="100%" y2="0%" p:name="linearFill" id="a50b61129b5647bfaa5e209d4abe857d">
+                    <stop style="stop-color:#165C80;stop-opacity:1" offset="0" p:name="stop1" id="150f17959628496c9ab388eda66429e1"/>
+                    <stop style="stop-color:#0A7AB4;stop-opacity:1" offset="0.5" p:name="stop2" id="0a18b563d5884d21aea622e6574a08b6"/>
+                    <stop style="stop-color:#165C80;stop-opacity:1" offset="1" p:name="stop3" id="7a3db1126d7d4e6eb48ea74971420fcc"/>
+                </linearGradient>
+            </defs>
+            <rect width="403" height="278" rx="0" ry="0" x="3" y="3" style="fill: rgb(0, 0, 0); fill-opacity: 0.2; stroke: none; visibility: visible;" p:name="shadowBox" id="298704cb6cd84c618bcc457e132ee5d7"/>
+            <rect width="402" height="277" rx="0" ry="0" x="0.5" y="0.5" style="fill: none;stroke: #005481; stroke-width:1; stroke-linejoin:round;" p:name="outBorder1" id="cd6a4e63ea4343c4a7377b57a29acfec"/>
+            <rect width="400" height="275" rx="0" ry="0" x="1.5" y="1.5" style="fill: none;stroke: #18B0FF; stroke-width:1; stroke-linejoin:round;" p:name="outBorder2" id="31d241c4a30c48fca7f04e455048125c"/>
+            <rect width="399" height="27" rx="0" ry="0" x="2" y="2" style="fill: url(#a50b61129b5647bfaa5e209d4abe857d); stroke: none;" p:name="titleBg" id="d53d859fd1824d3a9ccb3147abcbb83d"/>
+            <rect width="398" height="246" rx="0" ry="0" x="2.5" y="29.5" style="fill: #EDE9E3; stroke: #0071AC; stroke-width:1;stroke-linejoin:round;" p:name="contentBg" id="ceae06962cc94ee18dc56badfa928f72"/>
+            <text x="31.5" y="17.25" style="font-size: 13px; font-style: normal; font-weight: bold; text-align: left; text-anchor: start; dominant-baseline: central; fill: rgb(0, 0, 0); font-family: Liberation Sans; fill-opacity: 0.333333; text-decoration: none;" xml:space="preserve" p:name="shadowText" id="c89fa2e34c944ec2a4c71843fa0ea1f4" transform="translate(114,-2)">กราฟสรุปการรับซื้อ</text>
+            <text x="31.5" y="17.25" style="font-size: 13px; font-style: normal; font-weight: bold; text-align: left; text-anchor: start; dominant-baseline: central; fill: rgb(255, 255, 255); font-family: Liberation Sans; fill-opacity: 1; text-decoration: none;" xml:space="preserve" p:name="text" id="41886ecca2ae4ce38e13a04ac6626f09" transform="translate(113,-3)">กราฟสรุปการรับซื้อ</text>
+            <rect width="397" height="3.36" rx="0" ry="0" x="3" y="30" style="fill: rgb(255, 255, 255); stroke: none; fill-opacity: 1;" p:name="headerBar" id="1fdc745b17fa4b6a87bb0c672314459a"/>
+        </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.NativeGUI:Label" id="7f28e223f9e044faaac21eb53f392cf3" transform="matrix(1,0,0,1,362,136)"><p:metadata><p:property name="box"><![CDATA[210,20]]></p:property><p:property name="disabled"><![CDATA[false]]></p:property><p:property name="parseAccessKey"><![CDATA[true]]></p:property><p:property name="label"><![CDATA[แสดงน้ำหนักแต่ละขนาดและรวมต่อวัน]]></p:property><p:property name="textColor"><![CDATA[#000000FF]]></p:property><p:property name="textFont"><![CDATA["Liberation Sans",Arial,sans-serif|normal|normal|13px|none]]></p:property></p:metadata>
+            <foreignObject x="0" y="0" width="210" height="20" p:name="htmlObject" id="002e8cdf9df348cab15cd933ac565dd7" style="">
+                <html:div xmlns:html="http://www.w3.org/1999/xhtml" style="-moz-box-sizing: border-box; overflow: hidden; position: relative; font-size: 0px; width: 210px; height: 20px;" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" p:name="div" id="6068706f2df14dd89038907ec5fbfe5e">
+                    <hbox align="center" p:name="xulBox" id="7fc3c91db3dc424dba21702f91e139bf" width="210" style="width: 210px; height: 20px;" height="20" disabled="false">
+                        <label style="margin: 0px ! important; min-width: 0px ! important; -moz-box-sizing: border-box; vertical-align: middle; font-family: &quot;Liberation Sans&quot;,Arial,sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none; color: rgb(0, 0, 0); opacity: 1;" flex="1" p:name="xulControl" id="22e7cc26ddf64ca0841382e54a67d4ab" value="แสดงน้ำหนักแต่ละขนาดและรวมต่อวัน" accesskey=""/>
+                    </hbox>
+                    <html:div style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"></html:div>
+                </html:div>
+            </foreignObject>
+        </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Common:RoundedRect" id="3bc994a6ab934cf0a7b43dfb31280f7d" transform="matrix(1,0,0,1,335,177)"><p:metadata><p:property name="box"><![CDATA[260,152]]></p:property><p:property name="withBlur"><![CDATA[false]]></p:property><p:property name="radius"><![CDATA[0,0]]></p:property><p:property name="textPadding"><![CDATA[0,19]]></p:property><p:property name="fillColor"><![CDATA[#FFFFFFFF]]></p:property><p:property name="strokeColor"><![CDATA[#1B3280FF]]></p:property><p:property name="strokeStyle"><![CDATA[2|]]></p:property><p:property name="textContent"><![CDATA[
+                ]]></p:property><p:property name="textFont"><![CDATA["Liberation Sans",Arial,sans-serif|normal|normal|13px|none]]></p:property><p:property name="textColor"><![CDATA[#000000FF]]></p:property><p:property name="textAlign"><![CDATA[1,1]]></p:property></p:metadata>
+
+            <defs>
+                <rect width="258" height="150" rx="0" ry="0" x="0" y="0" style="stroke-width: 2; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(27, 50, 128); stroke-opacity: 1;" p:name="rrRect" id="e90c105770c5417cb4f44d97aeede7b5" transform="translate(1,1)"/>
+                <filter height="1.2558399" y="-0.12792" width="1.06396" x="-0.03198" p:name="shadingFilter" id="66fd6f1628e1473b9e5204e17bb42a9e">
+                    <feGaussianBlur stdDeviation="1" in="SourceAlpha"/>
+                </filter>
+            </defs>
+            <use xlink:href="#e90c105770c5417cb4f44d97aeede7b5" xmlns:xlink="http://www.w3.org/1999/xlink" transform="translate(2, 2)" p:filter="url(#66fd6f1628e1473b9e5204e17bb42a9e)" style="opacity: 0.5; visibility: hidden; display: none;" p:heavy="true" p:name="bgCopy" id="8c3e3da774cb4953a184150c9d3d6dc7"/>
+            <use xlink:href="#e90c105770c5417cb4f44d97aeede7b5" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+            <foreignObject x="19" y="76" width="222" height="0" p:name="text" id="ae6c905496314f21a00da68010622cf2" style="font-family: &quot;Liberation Sans&quot;,Arial,sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none; fill: rgb(0, 0, 0); fill-opacity: 1; color: rgb(0, 0, 0); opacity: 1; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml">
+                </div></foreignObject>
+        </g></Content></Page></Pages></Document>
