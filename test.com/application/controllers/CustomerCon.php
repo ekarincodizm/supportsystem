@@ -8,8 +8,9 @@ function __construct()
 	
 	function index()
 	{
-		$this->load->view('test');		
+		$this->load->view('Customer/home');		
 	}
+	////////////////////////เพิ่มข้อมูลลูกค้า//////////////////////////
 	function add()
 	{
 		$cusname=$this->input->post('cusname');
@@ -18,25 +19,27 @@ function __construct()
 		$custel=$this->input->post('custel');
 		$cusqrcodeid=$this->input->post('cusqrcodeid');
 		
-		var_dump($_POST);
 		
 		$this->Customer->setCusname($cusname);
 		$this->Customer->setCuslname($cuslname);
 		$this->Customer->setCusaddress($cusaddress);//ส่งset ไปหน้า Model 
 		$this->Customer->setCustel($custel);
 		$this->Customer->setCusqrcodeid($cusqrcodeid);
-		$id=$this->Customer->add();
-		echo "<script>parent.$.fancybox.close();</script>";
+		$this->Customer->add();
+		echo 'สำเร็จ' ;
+		//echo "<script>parent.$.fancybox.close();</script>";
 	}
 	function addView()
 	{
 		$this->load->view('Customer/CustomerAddView');
 	}
+	////////////////////////ดึง ข้อมูลลูกค้า โชว์//////////////////////////
 	function show()
 	{
 	$data['listcustomer']=$this->Customer->getAllData();
-		$this->load->view('Customer/CustomerShowView',$data);
+		$this->load->view('Customer/EmployeeShowViewSearch',$data);
 	}
+	////////////////////////แก้ไขข้อมูลลูกค้า//////////////////////////
 	function updateData()
 	{
 		$cusid=$this->input->post('cusid');
@@ -46,7 +49,6 @@ function __construct()
 		$custel=$this->input->post('custel');
 		$cusqrcodeid=$this->input->post('cusqrcodeid');
 		
-		var_dump($_POST);
 		
 		$this->Customer->setCusid($cusid);
 		$this->Customer->setCusname($cusname);
@@ -54,8 +56,8 @@ function __construct()
 		$this->Customer->setCusaddress($cusaddress);//ส่งset ไปหน้า Model 
 		$this->Customer->setCustel($custel);
 		$this->Customer->setCusqrcodeid($cusqrcodeid);
-		$id=$this->Customer->updateData();
-
+		$this->Customer->updateData();
+         echo 'แก้ไขข้อมูลแล้ว';
 	}
 	function getPKData($cusid)
 	{
@@ -63,6 +65,7 @@ function __construct()
 		$data['listcustomer']=$this->Customer->getKPData();
 		$this->load->view('Customer/CustomerEditView',$data);
 	}
+	////////////////////////ลบข้อมูลลูกค้า//////////////////////////
 	function deleteData($cusid)
 	{
 		$this->Customer->setCusid($cusid);
@@ -71,6 +74,13 @@ function __construct()
 		echo 'สำเร็จ' ;
 		
 	}
+	#############ค้นหาข้อมูล##################
+	function searchCustomer()
+    { 
+		$cusname = $this->input->post('textSearch');
+		$data['listcustomer']=$this->Customer->search($cusname);
+		$this->load->view('Customer/CustomerShowViewResult',$data);		
+    }
 	 function showInvoice()
 	{
 	$textSearch =	 $this->input->post('textSearch');
@@ -82,14 +92,15 @@ function __construct()
 	{
 	$textSearch =	 $this->input->post('textSearch');
 	$data['listcustomer']=$this->Invoicedetial->searchInvoice($textSearch);
-	$this->load->view('Customer/invoiceShowSearchResult',$data);
+	$this->load->view('Customer/invoiceShow',$data);
 	}
 	
-	function addInvoiceViewCus($cusid){
+	function addInvoiceViewCus($cusid)
+		{
 		$this->Customer->setCusid($cusid);
 		$data['listcustomer'] = $this->Customer->getKPData();
 		$this->load->view('Customer/invoiceAdd',$data);
-	}
+		}
 	
 	function addInvoice()
 	{
@@ -113,6 +124,7 @@ function __construct()
 		$invoiceId = $this->Invoice->addInvoice();
 		$billId = $this->Invoice->addBill();
 		var_dump($invoiceId);
+		
 		for($i=0;$i<4;$i++){
 			$this->Invoicedetial->setPriceid($priceid[0]['priceid']);
 			$this->Invoicedetial->setSize($size[$i]);
@@ -122,8 +134,6 @@ function __construct()
 			$this->Invoicedetial->setInvoiceid($billId);
 			$this->Invoicedetial->addBillDetial();
 		}
-		
-		
 		
 		var_dump($priceid );
 	}

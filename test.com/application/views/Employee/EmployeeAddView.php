@@ -15,8 +15,11 @@
       <input type="text" name="memberlname"></td>
   </tr>
    <tr>
-    <td>เพศ
-     <input type="text" name="membersex"></td>
+    <td>เพศ     
+      <select name="select" size="1" id="select">
+        <option value="membersex">หญิง</option>
+        <option value="membersex">ชาย</option>
+      </select></td>
 	 <td>ที่อยู่:
      <input type="text" name="memberaddress"></td>
   </tr>
@@ -29,13 +32,18 @@
    <tr>
    <td>Password
       <input type="text" name="memberpassword"></td>
-    <td>Status:
-      <input type="text" name="memberstatus"></td>
+    <td>Status:      
+      <label for="select2"></label>
+      <select name="select2" size="1" id="select2">
+        <option value="memberstatus">Owner</option>
+        <option value="memberstatus">Employee</option>
+      </select></td>
   </tr>
   <tr>
     <td colspan="2"><input type="submit" name="add" value="เพิ่ม"></td>
     </tr>
 </table>
+<label for="select"></label>
 </form>
 </body>
 </html>

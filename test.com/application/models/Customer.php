@@ -136,5 +136,10 @@ class Customer extends CI_Model
 		$this->db->where('cusid',$this->getCusid());
 		$this->db->delete('customer');
 	}
+	function search($cusname)
+	{
+		$this->db->like('cusname',$cusname);		
+		return $this->db->get('customer')->result_array();
+	}
 }
 ?>

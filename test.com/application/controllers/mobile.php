@@ -9,11 +9,11 @@ function __construct()
 	{
 		$data['error']= $error;
 		$this->session->unset_userdata('sessionData');
-		$this->load->view('home_mobile_login',$data);
+		$this->load->view('CUS/home_mobile_login',$data);
 	}
 	function home(){
 		$this->checkLogining();
-		$this->load->view('home_mobile');
+		$this->load->view('CUS/home_mobile');
 	}
 	function logout(){
 		$this->session->unset_userdata('sessionData');
@@ -49,7 +49,7 @@ function __construct()
 		   else
 		   {
 				$data['error']= 'ไม่มีผู้ใช้งานนี้อยู่ในระบบ';
-				$this->load->view('home_mobile_login',$data);
+				$this->load->view('CUS/home_mobile_login',$data);
 			 return false;   
 	   }
 	}

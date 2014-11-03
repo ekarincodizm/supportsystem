@@ -8,7 +8,7 @@ function __construct()
 	
 	function index()
 	{
-		$this->load->view('test2');		
+		$this->load->view('Employee/home');		
 	}
 	
 	function add()
@@ -30,7 +30,7 @@ function __construct()
 		$this->Member->setMemberusername($memberusername);
 		$this->Member->setMemberpassword($memberpassword);
 		$id=$this->Member->add();
-		echo "<script>parent.$.fancybox.close();</script>";
+		echo "เพิ่มข้อมูลสำเร็จ";
 	}
 	function addView()
 	{
@@ -74,10 +74,15 @@ function __construct()
 	{
 		$this->Member->setMemberid($memberid);
 		$this->Member->deleteData();
-		
-		$data['listmember']=$this->Member->getAllData();
-		$this->load->view('Employee/EmployeeShowView',$data);
+		echo 'สำเร็จ' ;	
 	}
+	#############ค้นหาข้อมูล##################
+	function searchMember()
+    { 
+		$membername = $this->input->post('textSearch');
+		$data['listmember']=$this->Member->search($membername);
+		$this->load->view('Employee/EmployeeShowViewResult',$data);		
+    }
 	function addPrice()
 	{
 		$ratesaa = $this->input->post('ratesaa');

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 
 <form action="<?php echo base_url();?>index.php/CustomerCon/updateData" method="post">
-<?php foreach($listcustomer as $V){?>
+<?php foreach($listcustomer as $V ){?>
 <table>
 <tr>
   <td colspan="2"><center><h2>เพิ่มข้อมูลลูกค้า</h2></center></td>

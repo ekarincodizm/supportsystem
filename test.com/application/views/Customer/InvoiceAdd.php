@@ -43,7 +43,7 @@
 	
 	<tr>
 		 <td><b>ชื่อผู้รับ</b></td>
-        <td><input type="hidden" name="memberid" value=""readonly><input type="text" name="membername" value="<?php //echo $s['membername'];?> " ></td>
+        <td><input type="hidden" name="memberid" value=""readonly><input type="text" name="membername" value="<?php echo $s['membername'];?> " ></td>
         <td></td>
 	</tr>
 	<tr>

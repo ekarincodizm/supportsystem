@@ -12,24 +12,10 @@ class VerifyLogin extends CI_Controller
 	 function index()
 	 {
 		
-	   //This method will have the credentials validation
-	   $this->load->library('form_validation');
-
-	   $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-	   $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database');
-
-	   if($this->form_validation->run() == FALSE)
-	   {
-		 //Field validation failed.&nbsp; User redirected to login page
-		 //echo ('434343');
-		 $this->load->view('loginshow');
-	   }
-	   else
-	   {
 			 //Go to private area
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
-
+	var_dump($_POST);
 		   //query the database
 		   $result = $this->LoginModel->login($username, $password);
 
@@ -55,16 +41,7 @@ class VerifyLogin extends CI_Controller
 			
 				 return TRUE;
 		   }
-		   else
-		   {
-		    
-			 $this->form_validation->set_message('check_database', 'Invalid username or password');
-			 	 
-			 $this->load->view('errorview');
-
-			 return false;
-		   }
-	   }
+		  
 	}
 }
 ?>

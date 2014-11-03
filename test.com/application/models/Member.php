@@ -192,5 +192,11 @@ class Member extends CI_Model
 		$this->db->where('memberid',$this->getMemberid());
 		$this->db->delete('member');
 	}
+	
+		function search($membername)
+	{
+		$this->db->like('membername',$membername);		
+		return $this->db->get('member')->result_array();
+	}
 }
 ?>
