@@ -14,8 +14,10 @@ Model: EmpModel
 */
 class Invoicedetial extends CI_Model
 {
-	var $size;
-	var $value;
+	var $sizeAA;
+	var $sizeA;
+	var $sizeB;
+	var $sizeC;
 	var $priceid;
 	var $invoiceid;
 
@@ -24,34 +26,54 @@ class Invoicedetial extends CI_Model
 		parent::__construct();
 		$this->load->database();
 	}
-	###### SET : size (ขนาด) ######
-	function setSize($size)
+	###### SET : sizeAA () ######
+	function setSizeAA($sizeAA)
 	{
-		$this->size = $size;
+		$this->sizeAA = $sizeAA;
 	}
 
-	###### GET : size (ขนาด) ######
-	function getSize()
+	###### GET : sizeAA () ######
+	function getSizeAA()
 	{
-		return $this->size;
+		return $this->sizeAA;
 	}
-	###### SET : value (จำนวน) ######
-	function setValue($value)
+	###### SET : sizeA () ######
+	function setSizeA($sizeA)
 	{
-		$this->value = $value;
+		$this->sizeA = $sizeA;
 	}
 
-	###### GET : value (จำนวน) ######
-	function getValue()
+	###### GET : sizeA () ######
+	function getSizeA()
 	{
-		return $this->value;
+		return $this->sizeA;
+	}
+		###### SET : sizeB () ######
+	function setSizeB($sizeB)
+	{
+		$this->sizeB = $sizeB;
+	}
+
+	###### GET : sizeB () ######
+	function getSizeB()
+	{
+		return $this->sizeB;
+	}
+	###### SET : sizeC () ######
+	function setSizeC($sizeC)
+	{
+		$this->sizeC = $sizeC;
+	}
+	###### GET : sizeC () ######
+	function getSizeC()
+	{
+		return $this->sizeC;
 	}
 	###### SET : priceid (รหัสราคา) ######
 	function setPriceid($priceid)
 	{
 		$this->priceid = $priceid;
 	}
-
 	###### GET : priceid (รหัสราคา) ######
 	function getPriceid()
 	{
@@ -76,25 +98,37 @@ class Invoicedetial extends CI_Model
 		return $this->db->get('customer')->result_array();
 	}
 	#############เพิ่มข้อมูลการรับซื้อ##################
-
-
 	function addDetial()
 	{
 	$data = array(							
-							'size' => $this->getSize(),
-							'value' => $this->getValue(),
+							'sizeAA' => $this->getSizeAA(),
+							'sizeA' => $this->getSizeA(),
+							'sizeB' => $this->getSizeB(),
+							'sizeC' => $this->getSizeC(),
 							'priceid' => $this->getPriceid(),
 							'invoiceid' => $this->getInvoiceid()
 
 						);
+			$data2 = array(							
+							'sizeAA' => $this->getSizeAA(),
+							'sizeA' => $this->getSizeA(),
+							'sizeB' => $this->getSizeB(),
+							'sizeC' => $this->getSizeC(),
+							'priceid' => $this->getPriceid(),
+							'billid' => $this->getInvoiceid()
+
+						);
+		$this->db->insert('billdetial', $data2);
 		$this->db->insert('invoicedetial', $data);
 		return $this->db->insert_id();
 	}
 	function addBillDetial()
 	{
 	$data = array(							
-							'size' => $this->getSize(),
-							'value' => $this->getValue(),
+							'sizeAA' => $this->getSizeAA(),
+							'sizeA' => $this->getSizeA(),
+							'sizeB' => $this->getSizeB(),
+							'sizeC' => $this->getSizeC(),
 							'priceid' => $this->getPriceid(),
 							'billid' => $this->getInvoiceid()
 
@@ -102,6 +136,5 @@ class Invoicedetial extends CI_Model
 		$this->db->insert('billdetial', $data);
 		return $this->db->insert_id();
 	}
-
 }
 ?>

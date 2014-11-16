@@ -1,10 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-session_start();
 class Home extends CI_Controller {
-
+function __construct()
+	{		
+		parent::__construct();
+	if(preg_match('/android|blackberry|ipad|iphone|ipod/i', $_SERVER['HTTP_USER_AGENT'])){
+		header("location:".base_url()."index.php/Mobile");
+		exit;
+	}
+	}
 	function index()
 	{
-		$this->load->view('Employee/home');
+			 header( "location: ".base_url()."index.php/homeEmployee" );
 	}
+
 }
 

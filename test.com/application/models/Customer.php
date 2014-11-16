@@ -136,10 +136,28 @@ class Customer extends CI_Model
 		$this->db->where('cusid',$this->getCusid());
 		$this->db->delete('customer');
 	}
+	#############Showการรับซื้อ##################
+	function getPurchase ()
+	{
+		$this->db->where('customer.cusid',$this->getCusid());
+		return $this->db->get('customer')->result_array();
+	}
 	function search($cusname)
 	{
 		$this->db->like('cusname',$cusname);		
 		return $this->db->get('customer')->result_array();
 	}
+	function getAllPurchase ()
+	{
+		return $this->db->get('customer')->result_array();
+	}
+	#############ค้นหาข้อมูลพนักงานการรับซื้อ##################
+	 function getCusIdSearch($cusid)
+	{
+		$this->db->like('cusid',$cusid);
+		$query  =  $this->db->get('customer');
+		return	$query;
+	}
+
 }
 ?>

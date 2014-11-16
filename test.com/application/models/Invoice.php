@@ -10,6 +10,7 @@ class Invoice extends CI_Model {
     var $invoicedate ; ######  invoicedate  ######
     var $cusid ; ######  cusid  ######
     var $memberid ; ######  memberid  ######
+	var $textSearch;
 ###### End Attribute  ###### 
 
  ###### SET : $invoiceid ######
@@ -66,7 +67,16 @@ class Invoice extends CI_Model {
         return $this->memberid; 
      }
 ###### End GET : $memberid ###### 
-
+ ###### SET : $textSearch ######
+    function setTextSearch($textSearch){
+        $this->textSearch = $textSearch; 
+     }
+###### End SET : $memberid ###### 
+###### GET : $textSearch ######
+    function getTextSearch(){
+        return $this->textSearch; 
+     }
+###### End GET : $memberid ###### 
 function addInvoice(){
 	$data = array(							
 
@@ -89,14 +99,35 @@ function addBill(){
 		$this->db->insert('bill', $data);
 		return $this->db->insert_id();
 }
-
 function getInvoices(){
-			$this->db->where('bill.cusid','3');
-			$this->db->join('bill','bill.billid = billdetial.billid');
-			$this->db->join('customer','customer.cusid = bill.cusid');
-			$this->db->join('price','price.priceid = billdetial.priceid');
-			return $this->db->get('billdetial')->result_array();
-}
 
+			$this->db->join('invoice','invoice.invoiceid = invoicedetial.invoiceid');
+			$this->db->join('customer','customer.cusid = invoice.cusid');
+			$this->db->join('price','price.priceid = invoicedetial.priceid');
+			$this->db->order_by('invoicedetial.invoiceid','DESC');
+			return $this->db->get('invoicedetial')->result_array();
+	}
+
+	function getInvoicesSearch(){
+
+			$this->db->join('invoice','invoice.invoiceid = invoicedetial.invoiceid');
+			$this->db->join('customer','customer.cusid = invoice.cusid');
+			$this->db->join('price','price.priceid = invoicedetial.priceid');
+			$this->db->order_by('invoicedetial.invoiceid','DESC');
+			$this->db->where('customer.cusid', $this->getTextSearch());
+			$this->db->or_where('customer.cusname', $this->getTextSearch());
+			$this->db->where('invoice.invoicedate', date('Y-m-d'));
+			return $this->db->get('invoicedetial')->result_array();
+	}
+
+	function getInvoicesPK(){
+			$this->db->join('invoice','invoice.invoiceid = invoicedetial.invoiceid');
+			$this->db->join('customer','customer.cusid = invoice.cusid');
+			$this->db->join('price','price.priceid = invoicedetial.priceid');
+			$this->db->order_by('invoicedetial.invoiceid','DESC');
+			$this->db->where('invoice.invoiceid', $this->getInvoiceid());
+			$this->db->where('invoice.invoicedate', date('Y-m-d'));
+			return $this->db->get('invoicedetial')->result_array();
+	}
 }
 ?>
