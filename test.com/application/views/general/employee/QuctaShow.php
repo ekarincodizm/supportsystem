@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<table width="522" height="77" border="1">
+<table width="522" height="77" border="1" align="center">
   <tr>
     <th colspan="2" style="text-align: left" scope="col">น้ำหนักรวมวันนี้้:
      <?php echo $now[0]['quctaweight'];?></th>
@@ -70,7 +70,7 @@
   <?php }?>
   </table>
    <tr>
-    <td colspan="4" style="text-align: center"><input type="submit" name="button" id="button" value="พิมพ์" /></td>
+    <td colspan="4" style="text-align: center"><center><br><input type="submit" name="button" id="button" value="พิมพ์" /></center></td>
 </tr>
 </table>
 <p>&nbsp;</p>

@@ -24,9 +24,8 @@
       <input type="text" name="custel" value="<?php echo $V ['custel']?>"></td>
   </tr>
   <tr>
-    <td colspan="3">รหัส QR-Code
-      <input type="text" name="cusqrcodeid" value="<?php echo $V ['cusqrcodeid']?>"></td>
-    </tr>
+    <td colspan="3"><p>รหัส QR-Code    </p>
+    <p><img src="<?php echo base_url().'qrcode/show'.$V['cusid'].'.png'?>" width="100" /></p>      </tr>
   <tr>
     <td colspan="3"><center><input type="submit" name="add" value="แก้ไข"></center></td>
     </tr>

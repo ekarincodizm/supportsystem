@@ -12,7 +12,7 @@
     <th colspan="5" nowrap="nowrap" style="font-weight: bold; text-align: center; font-size: 36px;">ใบเสร็จ</th>
   </tr>
   <tr>
-    <td colspan="3" style="font-size: 18px">&nbsp;</td>
+    <td colspan="3" style="font-size: 18px"><p><strong>โรงอบลำไยศรีเจริญ</strong> 7/3 ม.2 ต.สันทราย อ.สารภี จ.เชียงใหม่ 50140 โทร.053429188</p></td>
     <td colspan="2" style="font-size: 18px">เลขที่ใบเสร็จ&nbsp;:&nbsp;<?php echo $listcustomersum['invoiceid']?></td>
   </tr>
   <tr>
@@ -61,13 +61,13 @@
     <td align="right" style="font-size: 18px"><?php echo number_format(($listcustomersum['sizeAA']*27)+($listcustomersum['sizeA']*27)+
 	($listcustomersum['sizeB']*27)+($listcustomersum['sizeC']*27),0,'.',',');?></td>
     <td align="right" style="font-size: 18px">&nbsp;</td>
-    <td align="right" style="font-size: 18px"><?php 
+    <td align="right" style="font-size: 18px"><font color="#FF0000"><?php 
 	echo number_format( 
 	(($listcustomersum['sizeAA']*27)*$listcustomersum['ratesaa'])
 	+(($listcustomersum['sizeA']*27)*$listcustomersum['ratesa'])
 	+(($listcustomersum['sizeB']*27)*$listcustomersum['ratesb'])
 	+(($listcustomersum['sizeC']*27)*$listcustomersum['ratesc'])
-	,2,'.',',');?>
+	,2,'.',',');?></font>
     </td>
   </tr>
   <tr>

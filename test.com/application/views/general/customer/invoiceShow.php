@@ -37,40 +37,40 @@
  <br>
 <p style="text-align: center">
   <label for="textfield"></label>
-  <input type="text" name="textSearch" id="textSearch">
+  <input type="text" name="textSearch" id="textSearch" placeholder="กรุณากรอกชื่อลูกค้า" style="height:25px" >
 </p>
 <div id="invoiceDetia">
 <?php foreach($listcustomer as $V){if($V['invoicedate']==date('Y-m-d')){?>
-<center><table width="288" height="329" border="1">
-  <tr>
+<center><table width="288" height="329" border="5">
+  <tr bgcolor="#FFCC99">
     <td colspan="2" style="text-align: center; font-weight: bold; font-size: 24px;">ใบส่งของ</td>
   </tr>
   <tr>
-    <td width="175">&nbsp;</td>
-    <td width="191" style="font-weight: bold">เลขที่ใบส่งของ<?php echo $V['invoiceid']?> </td>
+    <td width="175" bgcolor="#FFFFCC">&nbsp;</td>
+    <td width="191" bgcolor="#FFFFCC" style="font-weight: bold">เลขที่ใบส่งของ<?php echo $V['invoiceid']?> </td>
   </tr>
   <tr>
-    <td style="font-weight: bold">ชื่อ<?php echo $V['cusname']?> </td>
-    <td style="font-weight: bold">วันที่<?php echo $V['invoicedate']?> </td>
+    <td bgcolor="#FFFFCC" style="font-weight: bold">ชื่อ:<?php echo $V['cusname']?> </td>
+    <td bgcolor="#FFFFCC" style="font-weight: bold">วันที่:<?php echo $V['invoicedate']?> </td>
   </tr>
   <tr>
-    <td style="text-align: center; font-weight: bold;">AA</td>
-    <td><?php echo $V['sizeAA']?> </td>
+    <td bgcolor="#FFFFCC" style="text-align: center; font-weight: bold;">AA</td>
+    <td bgcolor="#FFFFCC"><?php echo $V['sizeAA']?> </td>
   </tr>
   <tr>
-    <td style="text-align: center; font-weight: bold;">A </td>
-    <td><?php echo $V['sizeA']?></td>
+    <td bgcolor="#FFFFCC" style="text-align: center; font-weight: bold;">A </td>
+    <td bgcolor="#FFFFCC"><?php echo $V['sizeA']?></td>
   </tr>
   <tr>
-    <td style="text-align: center; font-weight: bold;">B </td>
-    <td><?php echo $V['sizeB']?></td>
+    <td bgcolor="#FFFFCC" style="text-align: center; font-weight: bold;">B </td>
+    <td bgcolor="#FFFFCC"><?php echo $V['sizeB']?></td>
   </tr>
   <tr>
-    <td style="text-align: center; font-weight: bold;">C </td>
-    <td><?php echo $V['sizeC']?></td>
+    <td bgcolor="#FFFFCC" style="text-align: center; font-weight: bold;">C </td>
+    <td bgcolor="#FFFFCC"><?php echo $V['sizeC']?></td>
   </tr>
   <tr>
-    <td colspan="2" style="font-weight: bold">ชื่อผู้รับ<?php echo $V['memberid']?> </td>
+    <td colspan="2" bgcolor="#FFFFCC" style="font-weight: bold">ชื่อผู้รับ:<?php echo $V['memberid']?> </td>
   </tr>
 </table></center>
 <p>&nbsp;</p>

@@ -27,10 +27,8 @@
 <body style="text-align: center">
 <br>
 <center><label for="textfield"></label>
-<input type="text" name="cusmane" id="cusmane" onKeyUp="return false;"> 
-<a href="<?php echo base_url()?>index.php/HomeCustomer/addView" class="fancyboxMagChildent">
-	<input type="button"  value="เพิ่ม">
-</a></center>
+<input name="cusmane" type="text" id="cusmane" placeholder="ค้นหา" style="height:25px" onKeyUp="return false;" > 
+</center>
  <center><div class="content">
 <table width="80%" class="CSSTableGenerator">
   <tr>
@@ -62,7 +60,7 @@
        <?php echo $V['custel']?> 
         </td>      
         <td>
-       <?php echo $V['cusqrcodeid']?> 
+             <img src="<?php echo base_url().'qrcode/show'.$V['cusid'].'.png'?>" width="100" />
         </td>   
         <td>
        <a class="link" href="<?php echo base_url()."index.php/HomeCustomer/getPKData/".$V['cusid']?>">Edit</a>
@@ -74,5 +72,7 @@
 
   <?php }?> 
   </table>
+  <center><a href="<?php echo base_url()?>index.php/HomeCustomer/addView" class="link">
+	<br><input type="button"  value="เพิ่มข้อมูลลูกค้า"><br><br><br></a></center>
 </div></center>
   

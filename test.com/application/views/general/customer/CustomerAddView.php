@@ -21,13 +21,8 @@
       <input type="text" name="custel"></td>
   </tr>
   <tr>
-    <td>รหัส QR-Code
-      <input type="text" name="cusqrcodeid"></td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
     <td colspan="2"><input type="submit" name="add" value="เพิ่ม"></td>
-    </tr>
+  </tr>
 </table>
 </form>
 </body>

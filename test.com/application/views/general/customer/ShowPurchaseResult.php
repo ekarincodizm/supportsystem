@@ -31,7 +31,7 @@
         </td>
       
         <td>
-       <?php echo $V['cusqrcodeid']?> 
+       <img src="<?php echo base_url().'qrcode/'.$V['cusid'].'.png'?>" width="100" />
         </td>
    
         <td>

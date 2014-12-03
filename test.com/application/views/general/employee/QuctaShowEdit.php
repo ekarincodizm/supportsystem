@@ -56,7 +56,7 @@ function savevalue(){
     <td width="146">
     <input type="hidden" name="id" id="id" value="<?php echo $now[0]['sumweightid'];?>"  />
     <input type="text" name="sumwage" id="sumwage" value="<?php echo $now[0]['quctaweight'];?>"  />
-    <input type="button" name="button2" id="button2" value="ยืนยัน" onClick="savevalue();">
+    <center><input type="button" name="button2" id="button2" value="ยืนยัน" onClick="savevalue();"></center>
 </td>
     <td width="56">กิโลกรัม</td>
     <td><a id="result"></a><input type="hidden" name="sumwagesave" id="sumwagesave" value="<?php echo $now[0]['quctaweight'];?>"  /></td>
@@ -142,8 +142,8 @@ function savevalue(){
   </table>
 
  <tr>
-    <td colspan="4" style="text-align: center"><input type="button" name="button" id="button" value="บันทึก" disabled/>
-    <input type="submit" name="submit" id="submit" value="บันทึก" style="display:none"/>
+    <td colspan="4" style="text-align: center"><center><br><input type="button" name="button" id="button" value="บันทึก" disabled/>
+   <input type="submit" name="submit" id="submit" value="บันทึก" style="display:none"/></center>
     </td>
   </tr>
 </table>

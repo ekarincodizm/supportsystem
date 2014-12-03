@@ -27,10 +27,8 @@
 <body style="text-align: center">
 <br>
 <center><label for="textfield"></label>
-<input type="text" name="membermane" id="membermane">
-<a href="<?php echo base_url()?>index.php/HomeEmployee/addView" class="link">
-	<input type="button"  value="เพิ่ม">
-</a></center>
+<input type="text" name="membermane" id="membermane" placeholder="ค้นหา" style="height:25px">
+</center>
 <br>
  <div class="content">
 <table width="80%" class="CSSTableGenerator ">
@@ -82,4 +80,8 @@
   </tr>
   <?php }?>
 </table>
+<br>
+<center><a href="<?php echo base_url()?>index.php/HomeEmployee/addView" class="link">
+	<input type="button"  value="เพิ่ม">
+</a></center>
 </div>

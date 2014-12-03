@@ -170,6 +170,41 @@ function addInvoice(){
 			$this->db->group_by('customer.cusid','ASC');
 			return $this->db->get('invoicedetial')->result_array();
 		}
-
+		
+		function forumInvoice()
+		{
+			$this->db->select('customer.cusid,customer.cusname,customer.cuslname');
+			$this->db->select_SUM('invoicedetial.sizeAA');
+			$this->db->select_SUM('invoicedetial.sizeA');
+			$this->db->select_SUM('invoicedetial.sizeB');
+			$this->db->select_SUM('invoicedetial.sizeC');
+			$this->db->select('price.ratesaa,price.ratesa,price.ratesb,price.ratesc,invoice.invoicedate');
+			
+			$this->db->join('invoice','invoice.invoiceid = invoicedetial.invoiceid');
+			$this->db->join('customer','customer.cusid = invoice.cusid');
+			$this->db->join('price','price.priceid = invoicedetial.priceid');
+		
+			$this->db->where('invoice.invoicedate', $this->getInvoicedate());
+			$this->db->group_by('customer.cusid','ASC');
+			$query = $this->db->get('invoicedetial');
+			return $query;
+		}
+		function forumInvoiceSum()
+		{
+			
+			$this->db->select_SUM('iv.sizeAA');
+			$this->db->select_SUM('iv.sizeA');
+			$this->db->select_SUM('iv.sizeB');
+			$this->db->select_SUM('iv.sizeC');
+			$this->db->select('p.ratesaa');
+			$this->db->select('p.ratesa');
+			$this->db->select('p.ratesb');
+			$this->db->select('p.ratesc');
+			$this->db->from('invoicedetial iv,price p');
+			$this->db->where('iv.priceid = p.priceid');
+		
+			$query = $this->db->get();
+			return $query;
+		}
 }
 ?>

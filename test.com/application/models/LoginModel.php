@@ -2,10 +2,10 @@
 Class LoginModel extends CI_Model
 {
 
-	var $id; //ÃËÑÊ¼Ùéãªé§Ò¹à¢éÒÊÙèÃÐºº
-	var $username; //ª×èÍ¼Ùéãªé§Ò¹à¢éÒÊÙèÃÐºº
-	var $password; //ÃËÑÊ¼èÒ¹¼Ùéãªé§Ò¹à¢éÒÊÙèÃÐºº
-	var $position; //¡ÓË¹´µÓáË¹è§¼Ùéãªé§Ò¹à¢éÒÊÙèÃÐºº
+	var $id; //ÃƒÃ‹Ã‘ÃŠÂ¼Ã™Ã©Ã£ÂªÃ©Â§Ã’Â¹Ã Â¢Ã©Ã’ÃŠÃ™Ã¨ÃƒÃÂºÂº
+	var $username; //ÂªÃ—Ã¨ÃÂ¼Ã™Ã©Ã£ÂªÃ©Â§Ã’Â¹Ã Â¢Ã©Ã’ÃŠÃ™Ã¨ÃƒÃÂºÂº
+	var $password; //ÃƒÃ‹Ã‘ÃŠÂ¼Ã¨Ã’Â¹Â¼Ã™Ã©Ã£ÂªÃ©Â§Ã’Â¹Ã Â¢Ã©Ã’ÃŠÃ™Ã¨ÃƒÃÂºÂº
+	var $position; //Â¡Ã“Ã‹Â¹Â´ÂµÃ“Ã¡Ã‹Â¹Ã¨Â§Â¼Ã™Ã©Ã£ÂªÃ©Â§Ã’Â¹Ã Â¢Ã©Ã’ÃŠÃ™Ã¨ÃƒÃÂºÂº
 
 function __construct()
 {
@@ -22,36 +22,36 @@ parent::__construct();
 	{
 		return $this->id;
 	}
-	###### SET : username (ª×èÍ¼Ùéãªé§Ò¹à¢éÒÊÙèÃÐºº) ######
+	###### SET : username (ÂªÃ—Ã¨ÃÂ¼Ã™Ã©Ã£ÂªÃ©Â§Ã’Â¹Ã Â¢Ã©Ã’ÃŠÃ™Ã¨ÃƒÃÂºÂº) ######
 	function setUsername($username)
 	{
 		$this->username = $username;
 	}
 
-	###### GET : username (ª×èÍ¼Ùéãªé§Ò¹à¢éÒÊÙèÃÐºº) ######
+	###### GET : username (ÂªÃ—Ã¨ÃÂ¼Ã™Ã©Ã£ÂªÃ©Â§Ã’Â¹Ã Â¢Ã©Ã’ÃŠÃ™Ã¨ÃƒÃÂºÂº) ######
 	function getUsername()
 	{
 		return $this->username;
 	}
 
-	###### SET : password (ÃËÑÊ¼èÒ¹¼Ùéãªé§Ò¹à¢éÒÊÙèÃÐºº) ######
+	###### SET : password (ÃƒÃ‹Ã‘ÃŠÂ¼Ã¨Ã’Â¹Â¼Ã™Ã©Ã£ÂªÃ©Â§Ã’Â¹Ã Â¢Ã©Ã’ÃŠÃ™Ã¨ÃƒÃÂºÂº) ######
 	function setPassword($password)
 	{
 		$this->password = $password;
 	}
 
-	###### GET : password (ÃËÑÊ¼èÒ¹¼Ùéãªé§Ò¹à¢éÒÊÙèÃÐºº) ######
+	###### GET : password (ÃƒÃ‹Ã‘ÃŠÂ¼Ã¨Ã’Â¹Â¼Ã™Ã©Ã£ÂªÃ©Â§Ã’Â¹Ã Â¢Ã©Ã’ÃŠÃ™Ã¨ÃƒÃÂºÂº) ######
 	function getPassword()
 	{
 		return $this->password;
 	}
-		###### SET : position (¡ÓË¹´µÓáË¹è§¼Ùéãªé§Ò¹à¢éÒÊÙèÃÐºº) ######
+		###### SET : position (Â¡Ã“Ã‹Â¹Â´ÂµÃ“Ã¡Ã‹Â¹Ã¨Â§Â¼Ã™Ã©Ã£ÂªÃ©Â§Ã’Â¹Ã Â¢Ã©Ã’ÃŠÃ™Ã¨ÃƒÃÂºÂº) ######
 	function setPosition($position)
 	{
 		$this->position = $position;
 	}
 
-	###### GET : position (¡ÓË¹´µÓáË¹è§¼Ùéãªé§Ò¹à¢éÒÊÙèÃÐºº) ######
+	###### GET : position (Â¡Ã“Ã‹Â¹Â´ÂµÃ“Ã¡Ã‹Â¹Ã¨Â§Â¼Ã™Ã©Ã£ÂªÃ©Â§Ã’Â¹Ã Â¢Ã©Ã’ÃŠÃ™Ã¨ÃƒÃÂºÂº) ######
 	function getPosition()
 	{
 		return $this->position;

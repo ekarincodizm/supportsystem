@@ -22,9 +22,8 @@
 			</script>
 			<br>
 <center><label for="textfield"></label>
-<input type="text" name="cusmane" id="cusmane" onKeyUp="return false;"> 
+<input type="text" name="cusmane" id="cusmane" style="height:25px" onKeyUp="return false;" placeholder="ค้นหา"> 
 <a href="<?php echo base_url()?>index.php/HomeCustomer/formAddPurchase" class="link">
-	<input type="button"  value="เพิ่ม">
 </a></center>
  <div class="content">
 <table width="80%" align="center" class="CSSTableGenerator ">
@@ -60,7 +59,7 @@
         </td>
       
         <td>
-       <?php echo $V['cusqrcodeid']?> 
+       <img src="<?php echo base_url().'qrcode/'.$V['cusid'].'.png'?>" width="100" />
         </td>
    
         <td>

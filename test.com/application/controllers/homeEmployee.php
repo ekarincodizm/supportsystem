@@ -214,6 +214,116 @@ class HomeEmployee extends CI_Controller {
 	{
 		echo date ('Y-m-d', strtotime("-1 day"));
 	}
-	
+	////////////////กราฟจำนวนน้ำหนักรายวัน//////////////////
+	function incomeDay()
+	{	
+		$date = date('Y-m-d');
+		$this->Invoice->setInvoicedate($date);
+		$invoicedata = $this->Invoice->forumInvoice()->result_array();
+
+		$aa=0;
+		$a=0;
+		$b=0;
+		$c=0;
+		foreach($invoicedata as $row)
+		{
+			$aa=$aa+$row['sizeAA']*27;
+			$a=$a+$row['sizeA']*27;
+			$b=$b+$row['sizeB']*27;
+			$c=$c+$row['sizeC']*27;
+		}
+		$sum = $aa+$a+$b+$c;
+		
+		$data['size']= 'AA A B C รวม';
+		$data['sum']=$aa.' '.$a.' '.$b.' '.$c.' '.$sum;
+		$data['title']='กราฟแสดงจำนวนน้ำหนักแต่ละขนาดและรวมต่อวัน';
+		
+		$this->load->view('general/employee/forum',$data);
+		
+	}
+	////////////////กราฟจำนวนเงินรายวัน//////////////////
+	function incomeDayMoney()
+	{	
+		$date = date('Y-m-d');
+		//$date = '2014-11-27';
+		$this->Invoice->setInvoicedate($date);
+		$invoicedata = $this->Invoice->forumInvoice()->result_array();
+
+		$aa=0;
+		$a=0;
+		$b=0;
+		$c=0;
+		foreach($invoicedata as $row)
+		{
+			$aa=$aa+$row['sizeAA']*$row['ratesaa']*27;
+			$a=$a+$row['sizeA']*$row['ratesa']*27;
+			$b=$b+$row['sizeB']*$row['ratesb']*27;
+			$c=$c+$row['sizeC']*$row['ratesc']*27;
+		}
+		$sum = $aa+$a+$b+$c;
+		
+		$data['size']= 'AA A B C รวม';
+		$data['sum']=$aa.' '.$a.' '.$b.' '.$c.' '.$sum;
+		$data['title']='กราฟแสดงจำนวนเงินแต่ละขนาดและรวมต่อวัน';
+		
+		$this->load->view('general/employee/forum',$data);
+		
+	}
+	////////////////กราฟจำนวนน้ำหนักรวมทั้งหมด//////////////////
+	function incomeWeightAll()
+	{	
+		$date = date('Y-m-d');
+		//$date = '2014-11-27';
+		//$this->Invoice->setInvoicedate($date);
+		$invoicedata = $this->Invoice->forumInvoiceSum()->result_array();
+
+		$aa=0;
+		$a=0;
+		$b=0;
+		$c=0;
+		foreach($invoicedata as $row)
+		{
+			$aa=$aa+$row['sizeAA']*27;
+			$a=$a+$row['sizeA']*27;
+			$b=$b+$row['sizeB']*27;
+			$c=$c+$row['sizeC']*27;
+		}
+		$sum = $aa+$a+$b+$c;
+		
+		$data['size']= 'AA A B C รวม';
+		$data['sum']=$aa.' '.$a.' '.$b.' '.$c.' '.$sum;
+		$data['title']='กราฟแสดงน้ำหนักรวมแต่ละขนาดและทั้งหมด';
+		
+		$this->load->view('general/employee/forum',$data);
+		
+	}
+	////////////////กราฟจำนวนเงินรวมทั้งหมด//////////////////
+	function incomeMoneyAll()
+	{	
+		$date = date('Y-m-d');
+		//$date = '2014-11-27';
+		//$this->Invoice->setInvoicedate($date);
+		$invoicedata = $this->Invoice->forumInvoiceSum()->result_array();
+
+		$aa=0;
+		$a=0;
+		$b=0;
+		$c=0;
+		foreach($invoicedata as $row)
+		{
+			$aa=$aa+$row['sizeAA']*$row['ratesaa']*27;
+			$a=$a+$row['sizeA']*$row['ratesa']*27;
+			$b=$b+$row['sizeB']*$row['ratesb']*27;
+			$c=$c+$row['sizeC']*$row['ratesc']*27;
+		}
+		$sum = $aa+$a+$b+$c;
+		
+		$data['size']= 'AA A B C รวม';
+		$data['sum']=$aa.' '.$a.' '.$b.' '.$c.' '.$sum;
+		$data['title']='กราฟแสดงจำนวนเงินรวมแต่ละขนาดและและทั้งหมด';
+		
+		$this->load->view('general/employee/forum',$data);
+		
+	}
 }
 ?>

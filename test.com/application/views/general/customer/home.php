@@ -74,14 +74,14 @@ $('#addView').fancybox({
 
 <body>
 <div id="header">
-<div id="title"><img src="<?php echo base_url()?>img/logo.jpg" class="logo" alt=""/></div><div id="loginBox"></div>
+<div id="title"><img src="<?php echo base_url()?>img/logo.jpg" class="logo" alt=""/><marquee behavior="slide" width="80%" style="display:inline;margin-top:-100px;"><font color="#FFCC99">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ระบบสนับสนุนการตัดสินใจของโรงอบลำไยศรีเจริญ</font></marquee></div><div id="loginBox" style="display:inline;margin-top:-80px;"></div>
 </div>
 <div id='cssmenu'>
 <ul>
-   <li><a href='<?php echo base_url()?>index.php/homeCustomer/show' class="menu"><span>จัดการข้อมูลลูกค้า</span></a></li>
+   <li><a href='<?php echo base_url()?>index.php/homeCustomer/show' class="menu"><span><img src="<?php echo base_url()?>img/1.jpg" width="40" style="margin-top:-10px;margin-bottom:-10px"/>จัดการข้อมูลลูกค้า</span></a></li >
   
-   <li><a href='<?php echo base_url()?>index.php/homeCustomer/showInvoice' class="menu"><span>ออกใบเสร็จ</span></a></li>
-    <li class='active has-sub'><a href='<?php echo base_url()?>index.php/homeCustomer/PurShow' class="menu"><span>จัดการการรับซื้อ</span></a>
+   <li><a href='<?php echo base_url()?>index.php/homeCustomer/showInvoice' class="menu"><span><img src="<?php echo base_url()?>img/4.jpg" width="50" style="margin-top:-10px;margin-bottom:-10px"/>ออกใบเสร็จ</span></a></li>
+    <li ><a href='<?php echo base_url()?>index.php/homeCustomer/PurShow' class="menu"><span><img src="<?php echo base_url()?>img/3.jpg" width="40" style="margin-top:-10px;margin-bottom:-10px"/>จัดการการรับซื้อ</span></a>
    </li>
 </ul>
 </div>

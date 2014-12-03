@@ -28,9 +28,9 @@ $('#selected').click(function(event) {
 <form id="forms">
 <h1><U><font color="#0000FF">เลือกวันที่</font></U></h1>
 <h2><font color="#0000FF">วันที่ : 
-  <input type="text" name="date" id="date" value="<?php echo date ('Y-m-d');?>"/>
+  <input type="text" name="date" id="date" style="height:25px" value="<?php echo date ('Y-m-d');?>"/>
   ย้อนหลัง : 
-  <input type="number" name="day" id="day" style="width:30px;" /> 
+  <input type="number" name="day" id="day" style="width:40px; height:25px"/> 
   วัน  </h2></font>
   <p>
     <input type="button" name="selected" id="selected" value="ยืนยัน">

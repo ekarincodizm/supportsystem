@@ -4,7 +4,10 @@ class HomeCustomer extends CI_Controller {
 	{		
 		parent::__construct();
 		$this->load->library('mpdf/mpdf');
+		$this->load->library('Ciqrcode');
+		
 	}
+	var $hostLocal = "http://naykaitoon.me/kratae";
 	function index()
 	{
 		$this->load->view('general/customer/home');
@@ -34,6 +37,15 @@ class HomeCustomer extends CI_Controller {
 	function show()
 	{
 		$data['listcustomer']=$this->Customer->getAllData();
+			for($i=0;$i<count($data['listcustomer']);$i++){
+				if(file_exists('qrcode/show'.$data['listcustomer'][$i]['cusid'])==FALSE){
+					$params['level'] = 'L';
+					$params['size'] = 10;
+					$params['savename'] = FCPATH.'qrcode/show'.$data['listcustomer'][$i]['cusid'].'.png';
+					$params['data'] = $this->hostLocal.'/index.php/homeCustomer/getPK/'.$data['listcustomer'][$i]['cusid'];
+					$this->ciqrcode->generate($params);
+				}
+			}
 		$this->load->view('general/customer/CustomerShowViewResult',$data);
 	}
 	////////////////////////ดึง ข้อมูลลูกค้า โชว์ โดยค้นหาจากชื่อลูกค้า//////////////////////////
@@ -66,6 +78,15 @@ class HomeCustomer extends CI_Controller {
 	{
 		$this->Customer->setCusid($cusid);
 		$data['listcustomer']=$this->Customer->getKPData();
+		for($i=0;$i<count($data['listcustomer']);$i++){
+				if(file_exists('qrcode/getPKData'.$data['listcustomer'][$i]['cusid'])==FALSE){
+					$params['level'] = 'L';
+					$params['size'] = 10;
+					$params['savename'] = FCPATH.'qrcode/getPKData'.$data['listcustomer'][$i]['cusid'].'.png';
+					$params['data'] = $this->hostLocal.'/index.php/homeCustomer/getPK/'.$data['listcustomer'][$i]['cusid'];
+					$this->ciqrcode->generate($params);
+				}
+			}
 		$this->load->view('general/customer/CustomerEditView',$data);
 	}
 	////////////////////////ลบข้อมูลลูกค้า//////////////////////////
@@ -159,6 +180,15 @@ class HomeCustomer extends CI_Controller {
 	function PurShow()
 	{
 		$data['listcustomer'] = $this->Customer->getAllPurchase();
+		for($i=0;$i<count($data['listcustomer']);$i++){
+			if(file_exists('qrcode/'.$data['listcustomer'][$i]['cusid'])==FALSE){
+				$params['level'] = 'L';
+				$params['size'] = 10;
+				$params['savename'] = FCPATH.'qrcode/'.$data['listcustomer'][$i]['cusid'].'.png';
+				$params['data'] = $this->hostLocal.'/index.php/homeCustomer/getPK/'.$data['listcustomer'][$i]['cusid'];
+				$this->ciqrcode->generate($params);
+			}
+		}
 		$this->load->view('general/customer/ShowPurchase', $data);		
 	}
 	function getPk($cusid)
@@ -174,7 +204,7 @@ class HomeCustomer extends CI_Controller {
 				$data['listcustomer'] =$this->Customer->getPurchase() ;
 				$this->load->view('general/customer/InvoiceAdd', $data);		
 			}else{
-		echo'ไม่มีข้อมูล';
+		echo'กรุณากำหนดราคารายวันก่อน';
 		}
 	}
 	#############ค้นหาข้อมูลการรับซื้อ##################
@@ -231,5 +261,6 @@ class HomeCustomer extends CI_Controller {
 				echo 'ไม่พบข้อมูล';
 			}
 	}
+	
 }
 ?>
