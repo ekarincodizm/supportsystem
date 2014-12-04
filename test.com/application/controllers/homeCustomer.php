@@ -49,7 +49,7 @@ class HomeCustomer extends CI_Controller {
 		$this->load->view('general/customer/CustomerShowViewResult',$data);
 	}
 	////////////////////////ดึง ข้อมูลลูกค้า โชว์ โดยค้นหาจากชื่อลูกค้า//////////////////////////
-		function searchCustomer()
+	function searchCustomer()
     { 
 		$cusname = $this->input->post('textSearch');
 		$data['listcustomer']=$this->Customer->search($cusname);
@@ -121,6 +121,7 @@ class HomeCustomer extends CI_Controller {
 						$sizeB=$sizeB+$data['listcustomer'][$i]['sizeB'];
 						$sizeC=$sizeC+$data['listcustomer'][$i]['sizeC'];
 					}
+					$data['listcustomersum']['cusid']=$data['listcustomer'][0]['cusid'];
 						$data['listcustomersum']['cusname']=$data['listcustomer'][0]['cusname'];
 						$data['listcustomersum']['invoicedate']=$data['listcustomer'][0]['invoicedate'];
 						$data['listcustomersum']['invoiceid']=$data['listcustomer'][0]['invoiceid'];
@@ -214,9 +215,9 @@ class HomeCustomer extends CI_Controller {
 		$data['listcustomer'] = $this->Customer->search($cusid);
 		$this->load->view('general/customer/ShowPurchaseResult', $data);	
     }
-	function bill($invoiceid)
+	function bill($cusid)
 	{
-		$this->Invoice->setInvoiceid($invoiceid);
+		$this->Invoice->setCusid($cusid);
 		$data['listcustomer']=$this->Invoice->getInvoicesPK();
 
 		if($data['listcustomer'])
@@ -231,7 +232,7 @@ class HomeCustomer extends CI_Controller {
 				$sumC=0;
 
 				for($i=0;$i<count($data['listcustomer']);$i++)
-					{
+					{	
 						$sizeAA=$sizeAA+$data['listcustomer'][$i]['sizeAA'];
 						$sizeA=$sizeA+$data['listcustomer'][$i]['sizeA'];
 						$sizeB=$sizeB+$data['listcustomer'][$i]['sizeB'];

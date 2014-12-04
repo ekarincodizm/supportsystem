@@ -28,14 +28,18 @@
        <?php echo $V['custel']?> 
         </td>      
         <td>
-       <?php echo $V['cusqrcodeid']?> 
+      <img src="<?php echo base_url().'qrcode/show'.$V['cusid'].'.png'?>" width="100" />
         </td>   
         <td>
-       <a class="link" href="<?php echo base_url()."index.php/HomeCustomer/getPKData/".$V['cusid']?>">Edit</a>
+       <a class="link" href="<?php echo base_url()."index.php/HomeCustomer/getPKData/".$V['cusid']?>"><img src="<?php echo base_url()?>img/12.jpg" width="40" style="margin-top:-10px;margin-bottom:-10px"/></a>
         </td>
          <td>
-        <a class="menu" href="<?php echo base_url()."index.php/HomeCustomer/deleteData/".$V['cusid']?>">Delete</a>
+        <a class="menu" href="<?php echo base_url()."index.php/HomeCustomer/deleteData/".$V['cusid']?>"><img src="<?php echo base_url()?>img/11.jpg" width="30" style="margin-top:-10px;margin-bottom:-10px"/></a>
        </td>
   </tr>
   <?php }?>
   </table>
+  <br />
+  <center><a href="<?php echo base_url()?>index.php/HomeCustomer/addView" class="link">
+	<br><input type="button"  value="เพิ่มข้อมูลลูกค้า"><br><br><br></a></center>
+</div></center>

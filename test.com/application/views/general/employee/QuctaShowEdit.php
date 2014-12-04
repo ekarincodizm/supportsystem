@@ -112,12 +112,17 @@ function savevalue(){
 		
 			foreach($buy as $inIn){
 					if($inIn['quctaid']==$y['quctaid']&&$inIn['cusid']==$c['cusid']){
+						$s=0;
+						$s=$s+$inIn['sizeAA'];
+				
+						$s=$s+$inIn['sizeA'];
 					
-						$sum= $inIn['sizeAA'];
-						$sum= $sum+$inIn['sizeA'];
-						$sum= $sum+$inIn['sizeB'];
-						$sum= $sum+$inIn['sizeC'];
-						
+						$s=$s+$inIn['sizeB'];
+					
+						$s=$s+$inIn['sizeC'];
+				
+						$sum= $sum+$s;
+				
 					}
 			 }
 			 if($inIn['quctaid']==$y['quctaid']){

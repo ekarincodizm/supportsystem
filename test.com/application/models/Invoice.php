@@ -142,9 +142,10 @@ function addInvoice(){
 			$this->db->join('customer','customer.cusid = invoice.cusid');
 			$this->db->join('price','price.priceid = invoicedetial.priceid');
 			$this->db->order_by('invoicedetial.invoiceid','DESC');
-			$this->db->where('invoice.invoiceid', $this->getInvoiceid());
+			$this->db->where('invoice.cusid', $this->getCusid());
 			$this->db->where('invoice.invoicedate', date('Y-m-d'));
 			return $this->db->get('invoicedetial')->result_array();
+			
 		}
 	function reportInvoice()
 		{

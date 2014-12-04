@@ -40,18 +40,36 @@
 		echo 'ไม่มีข้อมูล';
 	}
 	?></td>
-    <td><?php
-		$sum=0;
+    <td>    	<?php
+	if(count($yesterday)>0){
+	 foreach($yesterday as $y){ 
+	 	if($y['cusid']==$c['cusid']){
+			echo $y['buyweight'];
+		 }
+		}
+	}else{
+		echo 'ไม่มีข้อมูล';
+	}
+	?>
+    </td>
+    <td>    
+<?php
+			$sum=0;
 	foreach($yesterday as $y){ 
 		
-			foreach($invoid as $inIn){
+			foreach($buy as $inIn){
 					if($inIn['quctaid']==$y['quctaid']&&$inIn['cusid']==$c['cusid']){
+						$s=0;
+						$s=$s+$inIn['sizeAA'];
+				
+						$s=$s+$inIn['sizeA'];
 					
-						$sum= $inIn['sizeAA'];
-						$sum= $sum+$inIn['sizeA'];
-						$sum= $sum+$inIn['sizeB'];
-						$sum= $sum+$inIn['sizeC'];
-						
+						$s=$s+$inIn['sizeB'];
+					
+						$s=$s+$inIn['sizeC'];
+				
+						$sum= $sum+$s;
+				
 					}
 			 }
 			 if($inIn['quctaid']==$y['quctaid']){

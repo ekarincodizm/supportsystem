@@ -5,16 +5,16 @@
 <link rel="stylesheet" href="<?php echo base_url()?>css/table.css">
 <form action="<?php echo base_url();?>index.php/HomeCustomer/updateData" method="post">
 <?php foreach($listcustomer as $V ){?>
-<table class="CSSTableGenerator">
+<table width="619" height="280" align="center" class="CSSTableGenerator">
 <tr>
   <td colspan="3"><center><h2>แก้ไขข้อมูลลูกค้า</h2></center></td>
 </tr>
   <tr>
-  <td width="232">รหัสลูกค้า:
+  <td width="162">รหัสลูกค้า:
  	 <input type="hidden" name="cusid" required value="<?php echo $V ['cusid']?>"></td>
-    <td width="204">ชื่อ:
+    <td width="248">ชื่อ:
       <input type="text" name="cusname" required value="<?php echo $V ['cusname']?>"></td>
-    <td width="189">นามสกุล:      
+    <td width="268">นามสกุล:      
       <input type="text" name="cuslname" value="<?php echo $V ['cuslname']?>"></td>
   </tr>
   <tr>

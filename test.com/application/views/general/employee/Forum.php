@@ -1,31 +1,5 @@
 <html>
   <head>
-  <script>
-  $('#membermane').keyup(function(){
-
-				$.post("<?php echo base_url()?>index.php/HomeEmployee/searchMember",
-				{
-					textSearch:$('#membermane').val()
-				},
-				function(data)
-					{
-						$('.content').html(data);
-					});
-			});
-  $('.link').fancybox({
-	  			height :	'75%',
-				width :	'50%',
-				autoSize : false,
-				scrolling : 'auto',
-				arrows : false,
-				type				: 'iframe',
-				afterClose : function() {		
-       		$('.content').load("<?php echo base_url()?>index.php/HomeEmployee/show");
-
-    }
-	
-});
- </script>
     <script type="text/javascript" src="/js/jsapi.js"></script>
     <script type="text/javascript">
       google.load("visualization", "1", {packages:["corechart"]});
@@ -56,25 +30,22 @@
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));//เก็บ div ที่จะใช้แสดงที่ชื่อว่า chart_div อยู่ในตัวแปร chart
-
+		
         chart.draw(data, options);//เรียกใช้ chart
       }
     </script>
   </head>
   <body>
   <table>
-  	<tr><form action="<?php echo site_url('csellsystem/incomeDays/index.php?page=incomeday');?>" method="post">
+  	<tr><form action="<?php echo site_url('index.php/homeEmployee/reportInvoice');?>" method="post">
     	<td align="center"><input name="date" type="date" value="<?php echo date("Y-m-d")?>">
        <input type="submit" name="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;ดู&nbsp;&nbsp;&nbsp;&nbsp;"></td>
         </form>
     </tr>
   	<tr>
    		<td><div id="chart_div" style="width: 900px; height: 500px;"></div></td>
-        <!--<td><?php $sell = explode(" ", $amount);
-				$buy = explode(" ", $buyAmount); ?>
-				<font size="+3">รายรับ</font><br><font color="#0066CC" size="+2"><?php echo number_format($sell[0],2); ?> </font><br>
-				<font size="+3">รายจ่าย</font><br><font color="#FF0000" size="+2"><?php echo number_format($buy[0],2); ?></font></td>-->
     </tr>
+    </table>
     <?php
     	echo '<script type="text/javascript">';
 		echo "var size = '$size';";// ส่งค่า $day จาก PHP ไปยังตัวแปร day ของ Javascrip

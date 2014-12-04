@@ -57,8 +57,8 @@ $('#addView').fancybox({
     }
 });
  $('.popup').fancybox({
-	  			height :	'450',
-				width :	'400',
+	  			height :	'600',
+				width :	'500',
 				autoSize : false,
 				scrolling : 'auto',
 				arrows : false,

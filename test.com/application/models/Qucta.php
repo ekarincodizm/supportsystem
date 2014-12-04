@@ -140,13 +140,11 @@ class Qucta extends CI_Model
 		return $this->db->get('invoice')->result_array();
 	}
 	function getBuyweights()
-	{
+	{	
 		$this->db->join('invoice','invoice.quctaid = qucta.quctaid');
 		$this->db->join('invoicedetial','invoicedetial.invoiceid = invoice.invoiceid');
 		return $this->db->get('qucta')->result_array();
 	}
-	
-	
 	
 }
 ?>

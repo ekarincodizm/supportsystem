@@ -274,7 +274,7 @@ class HomeEmployee extends CI_Controller {
 	{	
 		$date = date('Y-m-d');
 		//$date = '2014-11-27';
-		//$this->Invoice->setInvoicedate($date);
+		$this->Invoice->setInvoicedate($date);
 		$invoicedata = $this->Invoice->forumInvoiceSum()->result_array();
 
 		$aa=0;
@@ -302,7 +302,7 @@ class HomeEmployee extends CI_Controller {
 	{	
 		$date = date('Y-m-d');
 		//$date = '2014-11-27';
-		//$this->Invoice->setInvoicedate($date);
+		$this->Invoice->setInvoicedate($date);
 		$invoicedata = $this->Invoice->forumInvoiceSum()->result_array();
 
 		$aa=0;
@@ -324,6 +324,71 @@ class HomeEmployee extends CI_Controller {
 		
 		$this->load->view('general/employee/forum',$data);
 		
+		
+	}
+	
+	#############ดึงข้อมูลการรับซื้อมาโชว์##################
+	function QuctaForum()
+	{
+		$data['listcustomer'] = $this->Customer->getAllPurchase();
+		$this->load->view('general/employee/ShowQuctaForum', $data);		
+	}
+	function getPk($cusid)
+	{	
+		$this->Qucta->setCusid($cusid);
+		$data['qucta']=$this->Qucta->getQuctaBycus();
+	
+		/*$result=$this->Price->findPiceToDay();
+		if($result&&$data['qucta'])
+			{
+				$this->Customer->setCusid($cusid);
+				$data['priceid']=$result[0]['priceid'];
+				$data['listcustomer'] =$this->Customer->getPurchase() ;
+				$this->load->view('general/customer/InvoiceAdd', $data);		
+			}else{
+		echo'กรุณากำหนดราคารายวันก่อน';
+		}*/
+	}
+	#############ค้นหาข้อมูลการรับซื้อ##################
+	function searchQuctaForum()
+    { 
+		$cusid = $this->input->post('textSearch');
+		$data['listcustomer'] = $this->Customer->search($cusid);
+		$this->load->view('general/employee/ShowQuctaForumResult', $data);	
+    }
+	////////////////กราฟแสดงสถิติการส่งลำไยตามโควต้าที่กำหนด//////////////////
+	function forumQucta($cusid)
+	{	
+		$date = date('Y-m-d');
+		for($i=0;$i<15;$i++)
+		{
+			$this->Sumweight->setSumweightdate(date('Y-m-d',strtotime(-$i.'day',strtotime($date))));
+			$arrdata = $this->Sumweight->forumQucta($cusid)->result_array();
+			
+			foreach($arrdata as $row)
+			{
+				$cusid = $row['cusid'];
+				$cusname= $row['cusname'];
+				$cuslname = $row['cuslname'];
+				$buyweight[]= $row['buyweight']+0;
+				$sumweightdate[] = $row['sumweightdate'];
+				$weigthAll[]=$row['sizeAA']+$row['sizeA']+$row['sizeB']+$row['sizeC'];
+			}
+			$arrdate[] = date('Y-m-d',strtotime(-$i.'day',strtotime($date)));
+			
+		}
+
+		$strweigthAll=implode(',',$weigthAll);
+		$strbuyweight=implode(',',$buyweight);
+		$strsumweightdate=implode(',',$arrdate);
+		
+		$data['strcusid']=$cusid;
+		$data['title']=$cusname.' '.$cuslname;
+		$data['strweigthAll']=$strweigthAll;
+		$data['strbuyweight']=$strbuyweight;
+		$data['strsumweightdate']=$strsumweightdate;
+		$this->load->view('general/employee/ForumQucta',$data);
+	
 	}
 }
 ?>

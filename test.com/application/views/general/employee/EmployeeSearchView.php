@@ -7,8 +7,8 @@
 <body style="text-align: center">
 <!--<label for="textfield" ></label>
 <input type="text" name="membermane" id="membermane" placeholder="ค้นหา">
-<input type="submit" name="search" id="search" value="ค้นหา">-->
- <div class="content">
+<input type="submit" name="search" id="search" value="ค้นหา">
+ <div class="content">-->
 <table width="80%" class="CSSTableGenerator ">
   <tr>
     <th nowrap="nowrap">รหัสพนักงาน</th>

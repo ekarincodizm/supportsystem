@@ -26,7 +26,7 @@
     <td><?php echo $listcustomersum['sizeC']?></td>
   </tr>
   <tr bgcolor="#9999FF">
-    <td colspan="2"><center><a class="popupbill" href="<?php echo base_url()?>index.php/homeCustomer/bill/<?php echo $listcustomersum['invoiceid']?>"><input type="button" name="button" id="button" value="ออกใบเสร็จ" /></a></center></td>
+    <td colspan="2"><center><a class="popupbill" href="<?php echo base_url()?>index.php/homeCustomer/bill/<?php echo $listcustomersum['cusid']?>"><input type="button" name="button" id="button" value="ออกใบเสร็จ" /></a></center></td>
    
   </tr>
 </table></center></th>

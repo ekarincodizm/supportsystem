@@ -64,6 +64,7 @@ $('#addView').fancybox({
    <li><a href='<?php echo base_url()?>index.php/homeEmployee/show' id="" class="menu"><span><img src="<?php echo base_url()?>img/1.jpg" width="40" style="margin-top:-10px;margin-bottom:-10px"/>จัดการข้อมูลพนักงาน</span></a></li>
   
    <li><a href='<?php echo base_url()?>index.php/homeEmployee/showQucta' class="fancyboxMagChildent"><span><img src="<?php echo base_url()?>img/2.jpg" width="40" style="margin-top:-10px;margin-bottom:-10px"/>จัดการโควต้า</span></a></li>
+   <li><a href='<?php echo base_url()?>index.php/homeEmployee/QuctaForum' class="menu"><span><img src="<?php echo base_url()?>img/6.jpg" width="40" style="margin-top:-10px;margin-bottom:-10px"/>กราฟแสดงสถิติโควต้า</span></a></li>
    <!---->
     <li class='active has-sub'><a href='<?php echo base_url()?>index.php/MemberCon/test' class="menu"><span><img src="<?php echo base_url()?>img/5.jpg" width="40" style="margin-top:-10px;margin-bottom:-10px"/>สรุปการรับซื้อ</span></a>
       <ul>
