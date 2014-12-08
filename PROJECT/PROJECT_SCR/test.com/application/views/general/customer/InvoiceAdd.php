@@ -5,41 +5,47 @@
 	 <link rel="stylesheet" href="<?php echo base_url()?>css/table.css">
 </head>
 <body>
-<?php echo form_open_multipart('HomeCustomer/addInvoice');?>
+<?php echo form_open_multipart('homeCustomer/addInvoice');?>
 <br>
 <br>
-<center><table class="CSSTableGenerator ">
-<!--
+<center>
+  <table width="432" height="345" class="CSSTableGenerator ">
 	<tr>
 
-		<td colspan="2"><b>เลขที่ใบเสร็จ</b></td>
-        <td> <input type="hidden" name="invoiceid" value="" readonly></td>
+		<td colspan="3" align="center"><h2><b>ใบส่งของ</b></h2></td>
 	</tr>
-    -->
+    <tr>
+		<td colspan="2"><strong>โรงอบลำไยศรีเจริญ</strong> 7/3 ม.2 ต.สันทราย อ.สารภี จ.เชียงใหม่ โทร.053-429188</td>
+        <td align="left"><strong>เลขที่ใบส่งของ</strong>:          <input type="hidden" name="invoiceid" value="" readonly></td>
+	</tr>
     <?php foreach($listcustomer as $s){?>
+    
 	<tr>
-		<td width="35"><b>ชื่อ</b></td><input type="hidden" name="cusid" value="<?php echo $s['cusid'];?> " ><input type="hidden" name="quctaid" value="<?php echo $qucta[0]['quctaid'];?> " ><input type="hidden" name="priceid" value="<?php echo $priceid;?> " >
-		<td width="144"><input type="text" name="cusname" value="<?php echo $s['cusname'];?> <?php echo $s['cuslname'];?>"readonly ></td>
-        <td width="49" colspan="2"><b>วันที่</b><?php echo date('d-m-Y');?></td>
+		<td width="66" align="center"><b>ชื่อ</b></td><input type="hidden" name="cusid" value="<?php echo $s['cusid'];?> " ><input type="hidden" name="quctaid" value="<?php echo $qucta[0]['quctaid'];?> " ><input type="hidden" name="priceid" value="<?php echo $priceid;?> " >
+		<td width="196"><input type="text" name="cusname" value="<?php echo $s['cusname'];?> <?php echo $s['cuslname'];?>"readonly ></td>
+        <td width="154" colspan="2" align="left"><b>วันที่:</b><?php echo date('d-m-Y');?></td>
     </tr>
 	<tr>
-		<td><b>AA</b></td>
+		<td align="center"><b>AA</b></td>
 		<td colspan="3"><input type="text" name="aa"> </td>
     </tr>
 	<tr>
-		<td><b>A</b></td>
+		<td align="center"><b>A</b></td>
 		<td colspan="3"><input type="text" name="a"></td>
     </tr>
 		<tr>
-		<td><b>B</b></td>
+		<td align="center"><b>B</b></td>
 		<td colspan="3"><input type="text" name="b"></td>
     </tr>
 		<tr>
-		<td><b>C</b></td>
+		<td align="center"><b>C</b></td>
 		<td colspan="3"><input type="text" name="c"></td>
     <tr>
-		 <td><b>ชื่อผู้รับ</b></td>
-        <td colspan="3"><input type="hidden" name="empname" value=""readonly></td>
+		 <td align="center"><b>ชื่อผู้รับ</b></td>
+        <td colspan="3">   <?php echo $this->session->userdata('memberusername');
+		?>
+        <input type="hidden" name="memberid" value=" <?php echo $this->session->userdata('memberid');
+		?>"readonly></td>
     </tr>
 	<tr>
 		<td colspan="4" ><center><input type="submit" value="บันทึก">	<input type="reset" value="ยกเลิก"></center></td>

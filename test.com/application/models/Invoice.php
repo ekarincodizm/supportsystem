@@ -147,6 +147,7 @@ function addInvoice(){
 			return $this->db->get('invoicedetial')->result_array();
 			
 		}
+
 	function reportInvoice()
 		{
 			$this->db->select(
@@ -188,6 +189,7 @@ function addInvoice(){
 			$this->db->where('invoice.invoicedate', $this->getInvoicedate());
 			$this->db->group_by('customer.cusid','ASC');
 			$query = $this->db->get('invoicedetial');
+			
 			return $query;
 		}
 		function forumInvoiceSum()
@@ -201,11 +203,32 @@ function addInvoice(){
 			$this->db->select('p.ratesa');
 			$this->db->select('p.ratesb');
 			$this->db->select('p.ratesc');
-			$this->db->from('invoicedetial iv,price p');
+			
+			$this->db->from('invoicedetial iv,price p,customer c,invoice i');
+			$this->db->where('i.invoiceid = iv.invoiceid');
+			$this->db->where('c.cusid = i.cusid');
 			$this->db->where('iv.priceid = p.priceid');
+			//$this->db->where('i.invoicedate', $this->getInvoicedate());
+			$this->db->group_by('c.cusid','ASC');
+			$this->db->group_by('i.invoicedate','ASC');
+			
+
 		
 			$query = $this->db->get();
 			return $query;
+
 		}
+		function getInvoicesPKssss()
+		{
+			$this->db->join('invoice','invoice.invoiceid = invoicedetial.invoiceid');
+			$this->db->join('customer','customer.cusid = invoice.cusid');
+			$this->db->order_by('invoicedetial.invoicedetialid','DESC');
+			$this->db->limit(1);
+			return $this->db->get('invoicedetial')->result_array();
+			
+		}
+		
+		
+		
 }
 ?>

@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="<?php echo base_url()?>css/table.css">
   <script>
 		$(document).ready(function() {
-		$('#content').load('/index.php/HomeCustomer/show');
+		$('#content').load('/index.php/homeCustomer/show');
   		$('.menu').click(function(event) {
 				 event.preventDefault();
 
@@ -52,19 +52,19 @@ $('#addView').fancybox({
 				type				: 'iframe',
 				afterClose : function() {
 					
-       		$('#content').load('/index.php/CustomerCon/show');
+       		$('#content').load('/index.php/homeCustomer/show');
 
     }
 });
  $('.popup').fancybox({
-	  			height :	'450',
-				width :	'400',
+	  			height :	'600',
+				width :	'500',
 				autoSize : false,
 				scrolling : 'auto',
 				arrows : false,
 				type				: 'iframe',
 				afterClose : function() {		
-       		$('#content').load("<?php echo base_url()?>index.php/HomeCustomer/PurShow");
+       		$('#content').load("<?php echo base_url()?>index.php/homeCustomer/PurShow");
 
     }
 	
@@ -74,14 +74,14 @@ $('#addView').fancybox({
 
 <body>
 <div id="header">
-<div id="title"><img src="<?php echo base_url()?>img/logo.jpg" class="logo" alt=""/></div><div id="loginBox"></div>
+<div id="title"><img src="<?php echo base_url()?>img/logo.jpg" class="logo" alt=""/><font color="#FFCC99">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ระบบสนับสนุนการตัดสินใจของโรงอบลำไยศรีเจริญ</font></div><div id="loginBox" style="display:inline;margin-top:-80px;"></div>
 </div>
 <div id='cssmenu'>
 <ul>
-   <li><a href='<?php echo base_url()?>index.php/homeCustomer/show' class="menu"><span>จัดการข้อมูลลูกค้า</span></a></li>
+   <li><a href='<?php echo base_url()?>index.php/homeCustomer/show' class="menu"><span><img src="<?php echo base_url()?>img/1.jpg" width="40" style="margin-top:-10px;margin-bottom:-10px"/>จัดการข้อมูลลูกค้า</span></a></li >
   
-   <li><a href='<?php echo base_url()?>index.php/homeCustomer/showInvoice' class="menu"><span>ออกใบเสร็จ</span></a></li>
-    <li class='active has-sub'><a href='<?php echo base_url()?>index.php/homeCustomer/PurShow' class="menu"><span>จัดการการรับซื้อ</span></a>
+   <li><a href='<?php echo base_url()?>index.php/homeCustomer/showInvoice' class="menu"><span><img src="<?php echo base_url()?>img/4.jpg" width="50" style="margin-top:-10px;margin-bottom:-10px"/>ออกใบเสร็จ</span></a></li>
+    <li ><a href='<?php echo base_url()?>index.php/homeCustomer/PurShow' class="menu"><span><img src="<?php echo base_url()?>img/3.jpg" width="40" style="margin-top:-10px;margin-bottom:-10px"/>จัดการการรับซื้อ</span></a>
    </li>
 </ul>
 </div>

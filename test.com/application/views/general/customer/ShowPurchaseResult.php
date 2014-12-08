@@ -35,7 +35,7 @@
         </td>
    
         <td>
-       <a class="popup" href="<?php echo base_url()."index.php/HomeCustomer/getPK/".$V['cusid']?>">เพิ่มข้อมูลการรับซื้อ</a>
+       <a class="popup" href="<?php echo base_url()."index.php/homeCustomer/getPK/".$V['cusid']?>">เพิ่มข้อมูลการรับซื้อ</a>
         </td>
   </tr>
   <?php }?>

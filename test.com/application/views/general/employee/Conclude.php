@@ -165,7 +165,7 @@ for($a=0 ; $a<count($invoice) ; $a++){
   </tr>
 </table>
   <br>
-  <center><input type="submit" name="button" id="button" value="พิมพ์" /></center>
+  <center><a class="fancyboxMagChildent" href="<?php echo base_url()?>index.php/homeEmployee/reportInvoice/<?php echo $data['invoice']?>"><input type="button" name="button" id="button" value="พิมพ์" /></a></center>
    <br>
    <br>
 </body>

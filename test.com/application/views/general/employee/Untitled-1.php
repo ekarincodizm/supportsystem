@@ -48,8 +48,8 @@ function savevalue(){
 	display:none;
 }
 </style>
-<body onload="savevalue();">
-<form action="<?php echo base_url() ?>index.php/homeEmployee/addQucta" method="post" >
+<body onLoad="savevalue();">
+<form action="<?php echo base_url() ?>index.php/homeemployee/addQucta" method="post" >
 
 <table width="522" height="77" border="1" align="center">
   <tr>

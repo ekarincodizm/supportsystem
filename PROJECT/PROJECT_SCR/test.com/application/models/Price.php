@@ -2,9 +2,9 @@
 /*
 #########################
 Model: EmpModel
-¼Ùé¾Ñ²¹Ò: ÇÔÀÒÃµÑ¹ì  ªÑÂÂÇ§
-¾Ñ²¹ÒàÁ×èÍ: 2014-10-23 
-ÀÒÂã¹»ÃĞ¡Íº´éÇÂ
+ï¿½ï¿½ï¿½Ñ²ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ÃµÑ¹ï¿½  ï¿½ï¿½ï¿½ï¿½Ç§
+ï¿½Ñ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: 2014-10-23 
+ï¿½ï¿½ï¿½ã¹»ï¿½Ğ¡Íºï¿½ï¿½ï¿½ï¿½
 ========
 	- priceid;
 	- pricedate;
@@ -51,51 +51,51 @@ class Price extends CI_Model
 	{
 		return $this->pricedate;
 	}
-	###### SET : ratesaa (ÃÒ¤Ò AA) ######
+	###### SET : ratesaa (ï¿½Ò¤ï¿½ AA) ######
 	function setRatesaa($ratesaa)
 	{
 		$this->ratesaa = $ratesaa;
 	}
 
-	###### GET : ratesaa (ÃÒ¤Ò AA) ######
+	###### GET : ratesaa (ï¿½Ò¤ï¿½ AA) ######
 	function getRatesaa()
 	{
 		return $this->ratesaa;
 	}
-	###### SET : ratesa (ÃÒ¤Ò A) ######
+	###### SET : ratesa (ï¿½Ò¤ï¿½ A) ######
 	function setRatesa($ratesa)
 	{
 		$this->ratesa = $ratesa;
 	}
 
-	###### GET : ratesa (ÃÒ¤Ò A) ######
+	###### GET : ratesa (ï¿½Ò¤ï¿½ A) ######
 	function getRatesa()
 	{
 		return $this->ratesa;
 	}
-	###### SET : ratesb (ÃÒ¤Ò B) ######
+	###### SET : ratesb (ï¿½Ò¤ï¿½ B) ######
 	function setRatesb($ratesb)
 	{
 		$this->ratesb = $ratesb;
 	}
 
-	###### GET : ratesb (ÃÒ¤Ò B) ######
+	###### GET : ratesb (ï¿½Ò¤ï¿½ B) ######
 	function getRatesb()
 	{
 		return $this->ratesb;
 	}
-	###### SET : ratesc (ÃÒ¤Ò C) ######
+	###### SET : ratesc (ï¿½Ò¤ï¿½ C) ######
 	function setRatesc($ratesc)
 	{
 		$this->ratesc = $ratesc;
 	}
 
-	###### GET : ratesc (ÃÒ¤Ò C) ######
+	###### GET : ratesc (ï¿½Ò¤ï¿½ C) ######
 	function getRatesc()
 	{
 		return $this->ratesc;
 	}
-	#############à¾ÔèÁÃÒ¤Ò##################
+	#############ï¿½ï¿½ï¿½ï¿½ï¿½Ò¤ï¿½##################
 	function addPice()
 	{
 	$data = array(	
@@ -118,6 +118,7 @@ class Price extends CI_Model
 
 	}
 	function findPiceToDay(){
+		echo date('Y-m-d');
 	$this->db->where('pricedate',date('Y-m-d'));
 	return $this->db->get('price')->result_array();
 	}

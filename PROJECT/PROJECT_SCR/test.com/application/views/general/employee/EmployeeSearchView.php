@@ -5,9 +5,9 @@
 </head>
 <body>
 <body style="text-align: center">
-<label for="textfield"></label>
-<input type="text" name="membermane" id="membermane">
-<input type="submit" name="search" id="search" value="ค้นหา" pattern="ค้นหา">
+<label for="textfield" ></label>
+<input type="text" name="membermane" id="membermane" placeholder="ค้นหา">
+<input type="submit" name="search" id="search" value="ค้นหา">
  <div class="content">
 <table width="80%" class="CSSTableGenerator ">
   <tr>
@@ -51,10 +51,10 @@
        <?php echo $V['memberpassword']?> 
         </td>
         <td>
-       <a class="link" href="<?php echo base_url()."index.php/HomeEmployee/getPKData/".$V['memberid']?>">Edit</a>
+       <a class="link" href="<?php echo base_url()."index.php/homeEmployee/getPKData/".$V['memberid']?>">Edit</a>
         </td>
          <td>
-        <a class="link" href="<?php echo base_url()."index.php/HomeEmployee/deleteData/".$V['memberid']?>">Delete</a>
+        <a class="link" href="<?php echo base_url()."index.php/homeEmployee/deleteData/".$V['memberid']?>">Delete</a>
         </td>
   </tr>
   <?php }?>

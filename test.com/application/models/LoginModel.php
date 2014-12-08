@@ -57,14 +57,13 @@ parent::__construct();
 		return $this->position;
 	}
 
- function login()
+ function login($username, $password)
  {
-   $this -> db -> select('*');
+   $this -> db -> select('memberid, memberusername, memberpassword, memberstatus');
    $this -> db -> from('member');
-   $this -> db -> where('memberusername', $this->getUsername());
-   $this -> db -> where('memberpassword',$this->getPassword());
+   $this -> db -> where('memberusername', $username);
+   $this -> db -> where('memberpassword', $password);
    $this -> db -> limit(1);
-   
    $query = $this -> db -> get();
 
    if($query -> num_rows() == 1)

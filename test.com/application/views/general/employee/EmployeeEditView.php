@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="<?php echo base_url()?>css/table.css">
-<form action="<?php echo base_url();?>index.php/HomeEmployee/updateData" method="post">
+<form action="<?php echo base_url();?>index.php/homeEmployee/updateData" method="post">
 <?php foreach($listmember as $V){?>
 <table class="CSSTableGenerator ">
 <tr>

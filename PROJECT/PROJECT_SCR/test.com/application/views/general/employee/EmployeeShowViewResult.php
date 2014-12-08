@@ -1,13 +1,13 @@
 <script>
   $('#membermane').keyup(function(){
 
-				$.post("<?php echo base_url()?>index.php/HomeEmployee/searchMember",
+				$.post("<?php echo base_url()?>index.php/homeEmployee/searchMember",
 				{
 					textSearch:$('#membermane').val()
 				},
 				function(data)
 					{
-						$('.content').html(data);
+						$('#content').html(data);
 					});
 			});
   $('.link').fancybox({
@@ -18,7 +18,7 @@
 				arrows : false,
 				type				: 'iframe',
 				afterClose : function() {		
-       		$('.content').load("<?php echo base_url()?>index.php/HomeEmployee/show");
+       		$('#content').load("<?php echo base_url()?>index.php/homeEmployee/show");
 
     }
 	
@@ -27,10 +27,8 @@
 <body style="text-align: center">
 <br>
 <center><label for="textfield"></label>
-<input type="text" name="membermane" id="membermane">
-<a href="<?php echo base_url()?>index.php/HomeEmployee/addView" class="link">
-	<input type="button"  value="เพิ่ม">
-</a></center>
+<input type="text" name="membermane" id="membermane" placeholder="ค้นหา" style="height:25px" onKeyUp="return false;">
+</center>
 <br>
  <div class="content">
 <table width="80%" class="CSSTableGenerator ">
@@ -74,12 +72,16 @@
        <?php echo $V['memberpassword']?> 
         </td>
         <td>
-       <a class="link" href="<?php echo base_url()."index.php/homeEmployee/getPKData/".$V['memberid']?>">Edit</a>
+       <a class="link" href="<?php echo base_url()."index.php/homeEmployee/getPKData/".$V['memberid']?>"><img src="<?php echo base_url()?>img/12.jpg" width="40" style="margin-top:-10px;margin-bottom:-10px"/></a>
         </td>
          <td>
-        <a class="link" href="<?php echo base_url()."index.php/homeEmployee/deleteData/".$V['memberid']?>">Delete</a>
+        <a class="link" href="<?php echo base_url()."index.php/homeEmployee/deleteData/".$V['memberid']?>"><img src="<?php echo base_url()?>img/11.jpg" width="30" style="margin-top:-10px;margin-bottom:-10px"/></a>
         </td>
   </tr>
   <?php }?>
 </table>
+<br>
+<center><a href="<?php echo base_url()?>index.php/homeEmployee/addView" class="link">
+	<input type="button"  value="เพิ่ม">
+</a></center>
 </div>

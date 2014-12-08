@@ -4,14 +4,15 @@ function __construct()
 	{		
 		parent::__construct();
 	if(preg_match('/android|blackberry|ipad|iphone|ipod/i', $_SERVER['HTTP_USER_AGENT'])){
-		header("location:".base_url()."index.php/Mobile");
+		header("location:".base_url()."index.php/loginMobile");
 		exit;
-	}
-	}
-	function index()
+	}else
 	{
-			 header( "location: ".base_url()."index.php/homeEmployee" );
+		header("location:".base_url()."index.php/loginHome");
+		exit;
+		}
 	}
+
 
 }
 

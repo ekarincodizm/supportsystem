@@ -69,14 +69,33 @@ class Sumweight extends CI_Model {
 			$this->db->select_SUM('invoicedetial.sizeB');
 			$this->db->select_SUM('invoicedetial.sizeC');
 			$this->db->select_SUM('invoicedetial.sizeC');
-			$this->db->select('buyweight');
+			$this->db->select('qucta.buyweight');
 			$this->db->select('sumweightdate');
 			
 			$this->db->from('customer');
 			$this->db->join('qucta','qucta.cusid = customer.cusid');
-			$this->db->join('invoice','invoice.quctaid = qucta.quctaid');
 			$this->db->join('sumweight','sumweight.sumweightid = qucta.sumweightid');
+			$this->db->join('invoice','invoice.quctaid = qucta.quctaid');
 			$this->db->join('invoicedetial','invoicedetial.invoiceid = invoice.invoiceid');
+			
+			$this->db->where('customer.cusid',$cusid);
+			$this->db->where('sumweight.sumweightdate',$this->getSumweightdate());
+			//$this->db->group_by('customer.cusid','ASC');
+			$query = $this->db->get();
+
+			return $query;
+		}
+		
+		function quctaWeight($cusid)
+		{
+
+			$this->db->select('qucta.buyweight');
+			$this->db->select('sumweightdate');
+			
+			$this->db->from('customer');
+			$this->db->join('qucta','qucta.cusid = customer.cusid');
+			$this->db->join('sumweight','sumweight.sumweightid = qucta.sumweightid');
+			
 			
 			$this->db->where('customer.cusid',$cusid);
 			$this->db->where('sumweight.sumweightdate',$this->getSumweightdate());

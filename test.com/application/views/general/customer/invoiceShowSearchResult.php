@@ -20,7 +20,7 @@
         <td><?php echo $V['cusaddress']?></td>
         <td><?php echo $V['custel']?></td>
         <td><?php echo $V['cusqrcodeid']?></td>
-        <td><a class="link" href="<?php echo base_url()."index.php/HomeCustomer/addInvoiceViewCus/".$V['cusid']?>">เพิ่มข้อมูลการรับซื้อ</a></td>
+        <td><a class="link" href="<?php echo base_url()."index.php/homeCustomer/addInvoiceViewCus/".$V['cusid']?>">เพิ่มข้อมูลการรับซื้อ</a></td>
         
       </tr>
       <?php }?>

@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<table width="522" height="77" border="1">
+<table width="522" height="77" border="1" align="center">
   <tr>
     <th colspan="2" style="text-align: left" scope="col">น้ำหนักรวมวันนี้้:
      <?php echo $now[0]['quctaweight'];?></th>
@@ -29,7 +29,7 @@
       <input type="hidden" name="quctaid[]" class="quctaid" value="<?php echo $n['quctaid'];?>" />
       <?php }
  }?></td>
-    <td><?php
+    <td>    	<?php
 	if(count($yesterday)>0){
 	 foreach($yesterday as $y){ 
 	 	if($y['cusid']==$c['cusid']){
@@ -39,19 +39,26 @@
 	}else{
 		echo 'ไม่มีข้อมูล';
 	}
-	?></td>
-    <td><?php
-		$sum=0;
+	?>
+    </td>
+    <td>    
+<?php
+			$sum=0;
 	foreach($yesterday as $y){ 
 		
-			foreach($invoid as $inIn){
+			foreach($buy as $inIn){
 					if($inIn['quctaid']==$y['quctaid']&&$inIn['cusid']==$c['cusid']){
+						$s=0;
+						$s=$s+$inIn['sizeAA'];
+				
+						$s=$s+$inIn['sizeA'];
 					
-						$sum= $inIn['sizeAA'];
-						$sum= $sum+$inIn['sizeA'];
-						$sum= $sum+$inIn['sizeB'];
-						$sum= $sum+$inIn['sizeC'];
-						
+						$s=$s+$inIn['sizeB'];
+					
+						$s=$s+$inIn['sizeC'];
+				
+						$sum= $sum+$s;
+				
 					}
 			 }
 			 if($inIn['quctaid']==$y['quctaid']){
@@ -70,7 +77,7 @@
   <?php }?>
   </table>
    <tr>
-    <td colspan="4" style="text-align: center"><input type="submit" name="button" id="button" value="พิมพ์" /></td>
+    <td colspan="4" style="text-align: center"><center><br><input type="submit" name="button" id="button" value="พิมพ์" /></center></td>
 </tr>
 </table>
 <p>&nbsp;</p>

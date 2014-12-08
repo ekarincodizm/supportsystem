@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="<?php echo base_url()?>css/table.css">
   <script>
 		$(document).ready(function() {
-		$('#content').load('/index.php/HomeCustomer/show');
+		$('#content').load('/index.php/homeCustomer/show');
   		$('.menu').click(function(event) {
 				 event.preventDefault();
 
@@ -52,7 +52,7 @@ $('#addView').fancybox({
 				type				: 'iframe',
 				afterClose : function() {
 					
-       		$('#content').load('/index.php/CustomerCon/show');
+       		$('#content').load('/index.php/homeCustomer/show');
 
     }
 });
@@ -64,7 +64,7 @@ $('#addView').fancybox({
 				arrows : false,
 				type				: 'iframe',
 				afterClose : function() {		
-       		$('#content').load("<?php echo base_url()?>index.php/HomeCustomer/PurShow");
+       		$('#content').load("<?php echo base_url()?>index.php/homeCustomer/PurShow");
 
     }
 	
@@ -74,7 +74,7 @@ $('#addView').fancybox({
 
 <body>
 <div id="header">
-<div id="title"><img src="<?php echo base_url()?>img/logo.jpg" class="logo" alt=""/><marquee behavior="slide" width="80%" style="display:inline;margin-top:-100px;"><font color="#FFCC99">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ระบบสนับสนุนการตัดสินใจของโรงอบลำไยศรีเจริญ</font></marquee></div><div id="loginBox" style="display:inline;margin-top:-80px;"></div>
+<div id="title"><img src="<?php echo base_url()?>img/logo.jpg" class="logo" alt=""/><font color="#FFCC99">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ระบบสนับสนุนการตัดสินใจของโรงอบลำไยศรีเจริญ</font></div><div id="loginBox" style="display:inline;margin-top:-80px;"></div>
 </div>
 <div id='cssmenu'>
 <ul>

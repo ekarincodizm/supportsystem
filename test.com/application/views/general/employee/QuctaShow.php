@@ -29,17 +29,6 @@
       <input type="hidden" name="quctaid[]" class="quctaid" value="<?php echo $n['quctaid'];?>" />
       <?php }
  }?></td>
-    <td><?php
-	if(count($yesterday)>0){
-	 foreach($yesterday as $y){ 
-	 	if($y['cusid']==$c['cusid']){
-			echo $y['buyweight'];
-		 }
-		}
-	}else{
-		echo 'ไม่มีข้อมูล';
-	}
-	?></td>
     <td>    	<?php
 	if(count($yesterday)>0){
 	 foreach($yesterday as $y){ 

@@ -56,7 +56,7 @@ function savevalue(){
     <td width="146">
     <input type="hidden" name="id" id="id" value="<?php echo $now[0]['sumweightid'];?>"  />
     <input type="text" name="sumwage" id="sumwage" value="<?php echo $now[0]['quctaweight'];?>"  />
-    <input type="button" name="button2" id="button2" value="ยืนยัน" onClick="savevalue();">
+    <center><input type="button" name="button2" id="button2" value="ยืนยัน" onClick="savevalue();"></center>
 </td>
     <td width="56">กิโลกรัม</td>
     <td><a id="result"></a><input type="hidden" name="sumwagesave" id="sumwagesave" value="<?php echo $now[0]['quctaweight'];?>"  /></td>
@@ -112,12 +112,17 @@ function savevalue(){
 		
 			foreach($buy as $inIn){
 					if($inIn['quctaid']==$y['quctaid']&&$inIn['cusid']==$c['cusid']){
+						$s=0;
+						$s=$s+$inIn['sizeAA'];
+				
+						$s=$s+$inIn['sizeA'];
 					
-						$sum= $inIn['sizeAA'];
-						$sum= $sum+$inIn['sizeA'];
-						$sum= $sum+$inIn['sizeB'];
-						$sum= $sum+$inIn['sizeC'];
-						
+						$s=$s+$inIn['sizeB'];
+					
+						$s=$s+$inIn['sizeC'];
+				
+						$sum= $sum+$s;
+				
 					}
 			 }
 			 if($inIn['quctaid']==$y['quctaid']){
@@ -142,8 +147,8 @@ function savevalue(){
   </table>
 
  <tr>
-    <td colspan="4" style="text-align: center"><input type="button" name="button" id="button" value="บันทึก" disabled/>
-    <input type="submit" name="submit" id="submit" value="บันทึก" style="display:none"/>
+    <td colspan="4" style="text-align: center"><center><br><input type="button" name="button" id="button" value="บันทึก" disabled/>
+   <input type="submit" name="submit" id="submit" value="บันทึก" style="display:none"/></center>
     </td>
   </tr>
 </table>

@@ -57,7 +57,7 @@ $('#addView').fancybox({
 
 <body>
 <div id="header">
-<div id="title"><img src="<?php echo base_url()?>img/logo.jpg" class="logo" alt=""/><marquee behavior="slide" width="80%" style="display:inline;margin-top:-100px;"><font color="#FFCC99">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ระบบสนับสนุนการตัดสินใจของโรงอบลำไยศรีเจริญ</font></marquee></div><div id="loginBox" style="display:inline;margin-top:-80px;"></div>
+<div id="title"><img src="<?php echo base_url()?>img/logo.jpg" class="logo" alt=""/><font color="#FFCC99">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ระบบสนับสนุนการตัดสินใจของโรงอบลำไยศรีเจริญ</font></div><div id="loginBox" style="display:inline;margin-top:-80px;"></div>
 </div>
 <div id='cssmenu'>
 <ul>
@@ -87,5 +87,6 @@ $('#addView').fancybox({
 </ul>
 </div>
 <div id="content"></div>
+
 </body>
 </html>

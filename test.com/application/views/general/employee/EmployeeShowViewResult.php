@@ -1,7 +1,7 @@
 <script>
   $('#membermane').keyup(function(){
 
-				$.post("<?php echo base_url()?>index.php/HomeEmployee/searchMember",
+				$.post("<?php echo base_url()?>index.php/homeEmployee/searchMember",
 				{
 					textSearch:$('#membermane').val()
 				},
@@ -18,7 +18,7 @@
 				arrows : false,
 				type				: 'iframe',
 				afterClose : function() {		
-       		$('#content').load("<?php echo base_url()?>index.php/HomeEmployee/show");
+       		$('#content').load("<?php echo base_url()?>index.php/homeEmployee/show");
 
     }
 	
@@ -81,7 +81,7 @@
   <?php }?>
 </table>
 <br>
-<center><a href="<?php echo base_url()?>index.php/HomeEmployee/addView" class="link">
+<center><a href="<?php echo base_url()?>index.php/homeEmployee/addView" class="link">
 	<input type="button"  value="เพิ่ม">
 </a></center>
 </div>

@@ -7,7 +7,7 @@ class HomeCustomer extends CI_Controller {
 		$this->load->library('Ciqrcode');
 		
 	}
-	var $hostLocal = "http://naykaitoon.me/kratae";
+	var $hostLocal = "http://128.199.184.20/";
 	function index()
 	{
 		$this->load->view('general/customer/home');
@@ -31,7 +31,7 @@ class HomeCustomer extends CI_Controller {
 	}
 	function addView()
 	{
-		$this->load->view('general/customer/CustomerAddView');
+		$this->load->view('general/customer/customerAddView');
 	}
 	////////////////////////ดึง ข้อมูลลูกค้า โชว์//////////////////////////
 	function show()
@@ -42,18 +42,18 @@ class HomeCustomer extends CI_Controller {
 					$params['level'] = 'L';
 					$params['size'] = 10;
 					$params['savename'] = FCPATH.'qrcode/show'.$data['listcustomer'][$i]['cusid'].'.png';
-					$params['data'] = $this->hostLocal.'/index.php/homeCustomer/getPK/'.$data['listcustomer'][$i]['cusid'];
+					$params['data'] = $this->hostLocal.'index.php/mobileCustomer/getPK/'.$data['listcustomer'][$i]['cusid'];
 					$this->ciqrcode->generate($params);
 				}
 			}
-		$this->load->view('general/customer/CustomerShowViewResult',$data);
+		$this->load->view('general/customer/customerShowViewResult',$data);
 	}
 	////////////////////////ดึง ข้อมูลลูกค้า โชว์ โดยค้นหาจากชื่อลูกค้า//////////////////////////
 	function searchCustomer()
     { 
 		$cusname = $this->input->post('textSearch');
 		$data['listcustomer']=$this->Customer->search($cusname);
-		$this->load->view('general/customer/CustomerShowViewSearch',$data);		
+		$this->load->view('general/customer/customerShowViewSearch',$data);		
     }
 	////////////////////////แก้ไขข้อมูลลูกค้า//////////////////////////
 	function updateData()
@@ -83,11 +83,11 @@ class HomeCustomer extends CI_Controller {
 					$params['level'] = 'L';
 					$params['size'] = 10;
 					$params['savename'] = FCPATH.'qrcode/getPKData'.$data['listcustomer'][$i]['cusid'].'.png';
-					$params['data'] = $this->hostLocal.'/index.php/homeCustomer/getPK/'.$data['listcustomer'][$i]['cusid'];
+					$params['data'] = $this->hostLocal.'index.php/mobileCustomer/getPK/'.$data['listcustomer'][$i]['cusid'];
 					$this->ciqrcode->generate($params);
 				}
 			}
-		$this->load->view('general/customer/CustomerEditView',$data);
+		$this->load->view('general/customer/customerEditView',$data);
 	}
 	////////////////////////ลบข้อมูลลูกค้า//////////////////////////
 	function deleteData($cusid)
@@ -175,7 +175,7 @@ class HomeCustomer extends CI_Controller {
 		$this->Invoicedetial->setInvoiceid($invoiceId);
 		$this->Invoicedetial->addDetial();
 		$this->Invoicedetial->setInvoiceid($billId);
-		var_dump($priceid );
+		//var_dump($priceid );
 	}
 	#############ดึงข้อมูลการรับซื้อมาโชว์##################
 	function PurShow()
@@ -186,11 +186,11 @@ class HomeCustomer extends CI_Controller {
 				$params['level'] = 'L';
 				$params['size'] = 10;
 				$params['savename'] = FCPATH.'qrcode/'.$data['listcustomer'][$i]['cusid'].'.png';
-				$params['data'] = $this->hostLocal.'/index.php/homeCustomer/getPK/'.$data['listcustomer'][$i]['cusid'];
+				$params['data'] = $this->hostLocal.'index.php/mobileCustomer/getPK/'.$data['listcustomer'][$i]['cusid'];
 				$this->ciqrcode->generate($params);
 			}
 		}
-		$this->load->view('general/customer/ShowPurchase', $data);		
+		$this->load->view('general/customer/showPurchase', $data);		
 	}
 	function getPk($cusid)
 	{	
@@ -203,7 +203,7 @@ class HomeCustomer extends CI_Controller {
 				$this->Customer->setCusid($cusid);
 				$data['priceid']=$result[0]['priceid'];
 				$data['listcustomer'] =$this->Customer->getPurchase() ;
-				$this->load->view('general/customer/InvoiceAdd', $data);		
+				$this->load->view('general/customer/invoiceAdd', $data);		
 			}else{
 		echo'กรุณากำหนดราคารายวันก่อน';
 		}
@@ -213,7 +213,7 @@ class HomeCustomer extends CI_Controller {
     { 
 		$cusid = $this->input->post('textSearch');
 		$data['listcustomer'] = $this->Customer->search($cusid);
-		$this->load->view('general/customer/ShowPurchaseResult', $data);	
+		$this->load->view('general/customer/showPurchaseResult', $data);	
     }
 	function bill($cusid)
 	{
@@ -251,7 +251,7 @@ class HomeCustomer extends CI_Controller {
 				$data['listcustomersum']['sizeB']=$sizeB;
 				$data['listcustomersum']['sizeC']=$sizeC;
 
-				$html = $this->load->view('general/customer/ShowBill',$data,TRUE);
+				$html = $this->load->view('general/customer/showBill',$data,TRUE);
 				$mpdf=new mPDF('th','A4',0,'',10,10,20,10,10,'');
 				$mpdf->setHTMLHeader($header);
 				$file = $mpdf->WriteHTML($html); // สั่งให้ mPDF เขียนไฟล์ pdf

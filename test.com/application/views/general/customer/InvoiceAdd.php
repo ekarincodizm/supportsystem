@@ -5,7 +5,7 @@
 	 <link rel="stylesheet" href="<?php echo base_url()?>css/table.css">
 </head>
 <body>
-<?php echo form_open_multipart('HomeCustomer/addInvoice');?>
+<?php echo form_open_multipart('homeCustomer/addInvoice');?>
 <br>
 <br>
 <center>
@@ -42,7 +42,10 @@
 		<td colspan="3"><input type="text" name="c"></td>
     <tr>
 		 <td align="center"><b>ชื่อผู้รับ</b></td>
-        <td colspan="3"><input type="hidden" name="empname" value=""readonly></td>
+        <td colspan="3">   <?php echo $this->session->userdata('memberusername');
+		?>
+        <input type="hidden" name="memberid" value=" <?php echo $this->session->userdata('memberid');
+		?>"readonly></td>
     </tr>
 	<tr>
 		<td colspan="4" ><center><input type="submit" value="บันทึก">	<input type="reset" value="ยกเลิก"></center></td>

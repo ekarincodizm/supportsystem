@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="<?php echo base_url()?>css/table.css">
-<form action="<?php echo base_url();?>index.php/HomeEmployee/addPrice" method="post">
+<form action="<?php echo base_url();?>index.php/homeEmployee/addPrice" method="post">
 <center><table width="264" border="1" class="CSSTableGenerator ">
 <tr>
   <td height="23" colspan="2"><font color="#FFFFFF"><center><h3>เพิ่มข้อมูลราคารายวัน</h3></center></font></td>

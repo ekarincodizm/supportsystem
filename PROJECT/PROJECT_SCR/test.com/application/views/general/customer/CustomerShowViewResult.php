@@ -1,7 +1,7 @@
  <script>
   $('#cusmane').keyup(function(){
 
-				$.post("<?php echo base_url()?>index.php/HomeCustomer/searchCustomer",
+				$.post("<?php echo base_url()?>index.php/homeCustomer/searchCustomer",
 				{
 					textSearch:$('#cusmane').val()
 				},
@@ -10,7 +10,7 @@
 						$('.content').html(data);
 					});
 			});
-			  $('.link').fancybox({
+	$('.link').fancybox({
 	  			height :	'450',
 				width :	'700',
 				autoSize : false,
@@ -18,7 +18,7 @@
 				arrows : false,
 				type				: 'iframe',
 				afterClose : function() {		
-       		$('#content').load("<?php echo base_url()?>index.php/HomeCustomer/show");
+       		$('#content').load("<?php echo base_url()?>index.php/homeCustomer/show");
 
     }
 	
@@ -27,10 +27,8 @@
 <body style="text-align: center">
 <br>
 <center><label for="textfield"></label>
-<input type="text" name="cusmane" id="cusmane" onKeyUp="return false;"> 
-<a href="<?php echo base_url()?>index.php/HomeCustomer/addView" class="fancyboxMagChildent">
-	<input type="button"  value="เพิ่ม">
-</a></center>
+<input name="cusmane" type="text" id="cusmane" placeholder="ค้นหา" style="height:25px" onKeyUp="return false;" > 
+</center>
  <center><div class="content">
 <table width="80%" class="CSSTableGenerator">
   <tr>
@@ -62,17 +60,19 @@
        <?php echo $V['custel']?> 
         </td>      
         <td>
-       <?php echo $V['cusqrcodeid']?> 
+             <img src="<?php echo base_url().'qrcode/show'.$V['cusid'].'.png'?>" width="100" />
         </td>   
         <td>
-       <a class="link" href="<?php echo base_url()."index.php/HomeCustomer/getPKData/".$V['cusid']?>">Edit</a>
+       <a class="link" href="<?php echo base_url()."index.php/homeCustomer/getPKData/".$V['cusid']?>"><img src="<?php echo base_url()?>img/12.jpg" width="40" style="margin-top:-10px;margin-bottom:-10px"/></a>
         </td>
          <td>
-        <a class="link" href="<?php echo base_url()."index.php/HomeCustomer/deleteData/".$V['cusid']?>">Delete</a>
+        <a class="link" href="<?php echo base_url()."index.php/homeCustomer/deleteData/".$V['cusid']?>"><img src="<?php echo base_url()?>img/11.jpg" width="30" style="margin-top:-10px;margin-bottom:-10px"/></a>
         </td>
   </tr>
 
   <?php }?> 
   </table>
+  <center><a href="<?php echo base_url()?>index.php/homeCustomer/addView" class="link">
+	<br><input type="button"  value="เพิ่มข้อมูลลูกค้า"><br><br><br></a></center>
 </div></center>
   

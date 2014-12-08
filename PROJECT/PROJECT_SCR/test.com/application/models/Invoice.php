@@ -142,10 +142,12 @@ function addInvoice(){
 			$this->db->join('customer','customer.cusid = invoice.cusid');
 			$this->db->join('price','price.priceid = invoicedetial.priceid');
 			$this->db->order_by('invoicedetial.invoiceid','DESC');
-			$this->db->where('invoice.invoiceid', $this->getInvoiceid());
+			$this->db->where('invoice.cusid', $this->getCusid());
 			$this->db->where('invoice.invoicedate', date('Y-m-d'));
 			return $this->db->get('invoicedetial')->result_array();
+			
 		}
+
 	function reportInvoice()
 		{
 			$this->db->select(
@@ -170,6 +172,63 @@ function addInvoice(){
 			$this->db->group_by('customer.cusid','ASC');
 			return $this->db->get('invoicedetial')->result_array();
 		}
+		
+		function forumInvoice()
+		{
+			$this->db->select('customer.cusid,customer.cusname,customer.cuslname');
+			$this->db->select_SUM('invoicedetial.sizeAA');
+			$this->db->select_SUM('invoicedetial.sizeA');
+			$this->db->select_SUM('invoicedetial.sizeB');
+			$this->db->select_SUM('invoicedetial.sizeC');
+			$this->db->select('price.ratesaa,price.ratesa,price.ratesb,price.ratesc,invoice.invoicedate');
+			
+			$this->db->join('invoice','invoice.invoiceid = invoicedetial.invoiceid');
+			$this->db->join('customer','customer.cusid = invoice.cusid');
+			$this->db->join('price','price.priceid = invoicedetial.priceid');
+		
+			$this->db->where('invoice.invoicedate', $this->getInvoicedate());
+			$this->db->group_by('customer.cusid','ASC');
+			$query = $this->db->get('invoicedetial');
+			
+			return $query;
+		}
+		function forumInvoiceSum()
+		{
+			
+			$this->db->select_SUM('iv.sizeAA');
+			$this->db->select_SUM('iv.sizeA');
+			$this->db->select_SUM('iv.sizeB');
+			$this->db->select_SUM('iv.sizeC');
+			$this->db->select('p.ratesaa');
+			$this->db->select('p.ratesa');
+			$this->db->select('p.ratesb');
+			$this->db->select('p.ratesc');
+			
+			$this->db->from('invoicedetial iv,price p,customer c,invoice i');
+			$this->db->where('i.invoiceid = iv.invoiceid');
+			$this->db->where('c.cusid = i.cusid');
+			$this->db->where('iv.priceid = p.priceid');
+			//$this->db->where('i.invoicedate', $this->getInvoicedate());
+			$this->db->group_by('c.cusid','ASC');
+			$this->db->group_by('i.invoicedate','ASC');
+			
 
+		
+			$query = $this->db->get();
+			return $query;
+
+		}
+		function getInvoicesPKssss()
+		{
+			$this->db->join('invoice','invoice.invoiceid = invoicedetial.invoiceid');
+			$this->db->join('customer','customer.cusid = invoice.cusid');
+			$this->db->order_by('invoicedetial.invoicedetialid','DESC');
+			$this->db->limit(1);
+			return $this->db->get('invoicedetial')->result_array();
+			
+		}
+		
+		
+		
 }
 ?>

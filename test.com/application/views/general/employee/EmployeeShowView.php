@@ -1,3 +1,8 @@
+<br />
+<center><label for="textfield"></label>
+<input type="text" name="membermane" id="membermane" placeholder="ค้นหา" style="height:25px" onKeyUp="return false;">
+</center>
+ <div class="content">
 <table width="80%" class="CSSTableGenerator ">
   <tr>
     <th nowrap="nowrap">รหัสลูกค้า</th>
@@ -48,6 +53,6 @@
   <?php }?>
 </table>
 <br />
-<center><a href="<?php echo base_url()?>index.php/HomeEmployee/addView" class="link">
+<center><a href="<?php echo base_url()?>index.php/homeEmployee/addView" class="link">
 	<input type="button"  value="เพิ่ม">
 </a></center>

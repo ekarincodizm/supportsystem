@@ -23,7 +23,7 @@
 	});
 	$('.fancyboxMagChildent').fancybox({
 			height :	'500',
-				width :	'65%',
+				width :	'75%',
 				autoSize : false,
 				scrolling : 'auto',
 				arrows : false,
@@ -57,26 +57,29 @@ $('#addView').fancybox({
 
 <body>
 <div id="header">
-<div id="title"><img src="<?php echo base_url()?>img/logo.jpg" class="logo" alt=""/></div><div id="loginBox"></div>
+<div id="title"><img src="<?php echo base_url()?>img/logo.jpg" class="logo" alt=""/><font color="#FFCC99">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ระบบสนับสนุนการตัดสินใจของโรงอบลำไยศรีเจริญ</font></div><div id="loginBox" style="display:inline;margin-top:-80px;"></div>
 </div>
 <div id='cssmenu'>
 <ul>
-   <li><a href='<?php echo base_url()?>index.php/HomeEmployee/show' id="" class="menu"><span>จัดการข้อมูลพนักงาน</span></a></li>
+   <li><a href='<?php echo base_url()?>index.php/homeEmployee/show' id="" class="menu"><span><img src="<?php echo base_url()?>img/1.jpg" width="40" style="margin-top:-10px;margin-bottom:-10px"/>จัดการข้อมูลพนักงาน</span></a></li>
   
-   <li><a href='<?php echo base_url()?>index.php/HomeEmployee/showQucta' class="fancyboxMagChildent"><span>จัดการโควต้า</span></a></li>
-    <li class='active has-sub'><a href='<?php echo base_url()?>index.php/MemberCon/test' class="menu"><span>สรุปการรับซื้อ</span></a>
+   <li><a href='<?php echo base_url()?>index.php/homeEmployee/showQucta' class="fancyboxMagChildent"><span><img src="<?php echo base_url()?>img/2.jpg" width="40" style="margin-top:-10px;margin-bottom:-10px"/>จัดการโควต้า</span></a></li>
+   <li><a href='<?php echo base_url()?>index.php/homeEmployee/QuctaForum' class="menu"><span><img src="<?php echo base_url()?>img/6.jpg" width="40" style="margin-top:-10px;margin-bottom:-10px"/>กราฟแสดงสถิติโควต้า</span></a></li>
+   <!---->
+    <li class='active has-sub'><a href='<?php echo base_url()?>index.php/MemberCon/test' class="menu"><span><img src="<?php echo base_url()?>img/5.jpg" width="40" style="margin-top:-10px;margin-bottom:-10px"/>สรุปการรับซื้อ</span></a>
       <ul>
-         <li class='has-sub'><a href='<?php echo base_url()?>index.php/HomeEmployee/addPriceView' class="fancyboxMagChildent"><span>กำหนดราคา</span></a>
+         <li class='has-sub'><a href='<?php echo base_url()?>index.php/homeEmployee/addPriceView' class="fancyboxMagChildent"><span>กำหนดราคา</span></a>
           
          </li>
-         <li class='has-sub'><a href='<?php echo base_url()?>index.php/HomeEmployee/showSelectreportInvoice'  class="menu"><span>แสดงรายงานสรุป</span></a>
+         <li class='has-sub'><a href='<?php echo base_url()?>index.php/homeEmployee/showSelectreportInvoice'  class="menu"><span>แสดงรายงานสรุป</span></a>
          
          </li>
           <li class='has-sub'><a href='<?php echo base_url()?>index.php/MemberCon/test' class="menu"><span>กราฟ</span></a>
             <ul>
-               <li><a href='<?php echo base_url()?>index.php/MemberCon/test' class="menu"><span>แสดงน้ำหนักแต่ละขนาดและรวมต่อวัน</span></a></li>
-               <li><a href='<?php echo base_url()?>index.php/MemberCon/test' class="menu"><span>แสดงจำนวนเงินแต่ละขนาดและรวมต่อวัน</span></a></li>
-                <li  class='last'><a href='<?php echo base_url()?>index.php/MemberCon/test' class="menu"><span>น้ำหนักรวมทั้งหมด</span></a></li>
+               <li><a href='<?php echo base_url()?>index.php/homeEmployee/incomeDay' class="fancyboxMagChildent"><span>แสดงน้ำหนักแต่ละขนาดและรวมต่อวัน</span></a></li>
+               <li><a href='<?php echo base_url()?>index.php/homeEmployee/incomeDayMoney' class="fancyboxMagChildent"><span>แสดงจำนวนเงินแต่ละขนาดและรวมต่อวัน</span></a></li>
+                <li  class='last'><a href='<?php echo base_url()?>index.php/homeEmployee/incomeWeightAll' class="fancyboxMagChildent"><span>น้ำหนักรวมทั้งหมด</span></a></li>
+                <li  class='last'><a href='<?php echo base_url()?>index.php/homeEmployee/incomeMoneyAll' class="fancyboxMagChildent"><span>จำนวนเงินรวมทั้งหมด</span></a></li>
             </ul>
          </li>
       </ul>
@@ -84,5 +87,6 @@ $('#addView').fancybox({
 </ul>
 </div>
 <div id="content"></div>
+
 </body>
 </html>

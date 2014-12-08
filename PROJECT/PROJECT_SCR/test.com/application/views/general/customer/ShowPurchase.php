@@ -9,7 +9,7 @@
   <script>
   $('#cusmane').keyup(function(){
 
-				$.post("<?php echo base_url()?>index.php/HomeCustomer/searchPurchase",
+				$.post("<?php echo base_url()?>index.php/homeCustomer/searchPurchase",
 				{
 					textSearch:$('#cusmane').val()
 				},
@@ -22,9 +22,8 @@
 			</script>
 			<br>
 <center><label for="textfield"></label>
-<input type="text" name="cusmane" id="cusmane" onKeyUp="return false;"> 
-<a href="<?php echo base_url()?>index.php/HomeCustomer/formAddPurchase" class="link">
-	<input type="button"  value="เพิ่ม">
+<input type="text" name="cusmane" id="cusmane" style="height:25px" onKeyUp="return false;" placeholder="ค้นหา"> 
+<a href="<?php echo base_url()?>index.php/homeCustomer/formAddPurchase" class="link">
 </a></center>
  <div class="content">
 <table width="80%" align="center" class="CSSTableGenerator ">
@@ -60,11 +59,11 @@
         </td>
       
         <td>
-       <?php echo $V['cusqrcodeid']?> 
+       <img src="<?php echo base_url().'qrcode/'.$V['cusid'].'.png'?>" width="100" />
         </td>
    
         <td>
-       <a class="popup" href="<?php echo base_url()."index.php/HomeCustomer/getPK/".$V['cusid']?>">เพิ่มข้อมูลการรับซื้อ</a>
+       <a class="popup" href="<?php echo base_url()."index.php/homeCustomer/getPK/".$V['cusid']?>">เพิ่มข้อมูลการรับซื้อ</a>
         </td>
   </tr>
   <?php }?>

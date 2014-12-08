@@ -1,3 +1,8 @@
+<br />
+<center><label for="textfield"></label>
+<input type="text" name="membermane" id="membermane" placeholder="ค้นหา" style="height:25px" onKeyUp="return false;">
+</center>
+ <div class="content">
 <table width="80%" class="CSSTableGenerator ">
   <tr>
     <th nowrap="nowrap">รหัสลูกค้า</th>
@@ -39,11 +44,15 @@
        <?php echo $V['memberpassword']?> 
         </td>
         <td>
-       <a class="link" href="<?php echo base_url()."index.php/homeEmployee/getPKData/".$V['memberid']?>">Edit</a>
+       <a class="link" href="<?php echo base_url()."index.php/homeEmployee/getPKData/".$V['memberid']?>"><img src="<?php echo base_url()?>img/12.jpg" width="40" style="margin-top:-10px;margin-bottom:-10px"/></a>
         </td>
          <td>
-        <a class="link" href="<?php echo base_url()."index.php/homeEmployee/deleteData/".$V['memberid']?>">Delete</a>
+        <a class="link" href="<?php echo base_url()."index.php/homeEmployee/deleteData/".$V['memberid']?>"><img src="<?php echo base_url()?>img/11.jpg" width="30" style="margin-top:-10px;margin-bottom:-10px"/></a>
         </td>
   </tr>
   <?php }?>
 </table>
+<br />
+<center><a href="<?php echo base_url()?>index.php/homeEmployee/addView" class="link">
+	<input type="button"  value="เพิ่ม">
+</a></center>

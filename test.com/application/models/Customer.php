@@ -159,6 +159,11 @@ class Customer extends CI_Model
 		return	$query;
 	}
 	
+	function searchwhere($cusname)
+	{
+		$this->db->where('cusname',$cusname);		
+		return $this->db->get('customer')->result_array();
+	}
 
 }
 ?>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
  <link rel="stylesheet" href="<?php echo base_url()?>css/table.css">
-<form action="<?php echo base_url();?>index.php/HomeEmployee/add" method="post">
+<form action="<?php echo base_url();?>index.php/homeEmployee/add" method="post">
 <table class="CSSTableGenerator ">
 <tr>
   <td colspan="2"><center><h2>เพิ่มข้อมูลพนักงาน</h2></center></td>

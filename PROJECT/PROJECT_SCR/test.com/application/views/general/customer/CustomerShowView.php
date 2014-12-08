@@ -8,8 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>js/fancy/source/jquery.fancybox.css?v=2.1.5" media="screen" />
  <script>
   $('.link').fancybox({
-	  			height :	'450',
-				width :	'300',
+	  			height :	'500',
+				width :	'450',
 				autoSize : false,
 				scrolling : 'auto',
 				arrows : false,
@@ -22,7 +22,7 @@
 });
  </script>
  <div class="content">
-<table width="80%" class="CSSTableGenerator">
+<table width="80%" align="center" class="CSSTableGenerator">
   <tr>
     <th nowrap="nowrap" bgcolor="#996633">รหัสลูกค้า</th>
     <th nowrap="nowrap" bgcolor="#996633">ชื่อ</th>
